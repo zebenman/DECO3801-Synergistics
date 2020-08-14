@@ -1,5 +1,9 @@
 {
     "AdvisorType": "MILITARY",
     "Question": "What are your thoughts on the bugs found in our farmers fields?",
-    "Response": 
+    "Response": "If you're looking for a more professional opinion, I'd ask [AGRICULTURAL], but in terms of the military; I'd be worried if this is a legitimate threat. Having to choose between feeding your citizens and your troops is not a decision anyone should have to make...",
+    "TraitWeightings": {},
+    "RequiredFlags": [],
+    "BackgroundFlags": [],
+    "AdditionalData": {}
 }

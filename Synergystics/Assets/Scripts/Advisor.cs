@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
@@ -33,13 +32,19 @@ public class Advisor : MonoBehaviour
             return new AdvisorTraits(EmptyValue, EmptyValue, EmptyValue, EmptyValue);
         }
 
+        public static AdvisorTraits MapFrom(Dictionary<string, float> traitMap)
+        {
+            // TODO
+            return new AdvisorTraits(EmptyValue, EmptyValue, EmptyValue, EmptyValue);
+        }
+
         // Checks each field in the struct to check if its 'empty' (i.e. all values are -2) 
         // Returns true if all values are 'empty', false otherwise
         public bool Empty()
         {
             foreach(FieldInfo field in typeof(AdvisorTraits).GetFields())
             {
-                if((int)field.GetValue(this) != EmptyValue)
+                if((float)field.GetValue(this) != EmptyValue)
                 {
                     return false;
                 } 
@@ -81,7 +86,7 @@ public class Advisor : MonoBehaviour
         } else
         {
             lines.Add("Dialogue Selection List was NULL!");
-        }
+        }       
         return lines;
     }
 

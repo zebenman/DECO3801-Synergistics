@@ -1,0 +1,9 @@
+{
+    "AdvisorType": "MILITARY",
+    "Question": "How do you think we should deal with the bugs found in our farmers fields?",
+    "Response": "It might be worth stockpiling grain and other foods in case this turns out to be a big problem. You should also talk to [AGRICULTURAL] and [SCHOLAR], I'm sure they'll have solutions.",
+    "TraitWeightings": {},
+    "RequiredFlags": [],
+    "BackgroundFlags": [ "GRAIN_STOCKPILE" ],
+    "AdditionalData": {}
+}

@@ -311,6 +311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681c3caa9f4e30b49a815e6936ed9537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasSelectedFocus: 0
+  LastSelectedOption: -1
+  MaxFocusSelectionCount: 2
+  Advisors:
+  - {fileID: 1336015453}
+  - {fileID: 1674186203}
+  - {fileID: 363939921}
 --- !u!4 &956797924
 Transform:
   m_ObjectHideFlags: 0

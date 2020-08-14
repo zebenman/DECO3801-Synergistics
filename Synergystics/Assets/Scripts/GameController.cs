@@ -16,6 +16,8 @@ public class GameController : MonoBehaviour
     // Dialogue loader that reads dialogue information from file
     public readonly DialogueLoader DialogugeLoader = new DialogueLoader("Resources\\Dialogue");
 
+    public readonly GameConfig GameConfig = GameConfig.LoadFrom("Resources\\config.json", true);
+
     // Flag describing if the user has selected a focus (hidden from Unity inspector)
     [HideInInspector]
     [NonSerialized]

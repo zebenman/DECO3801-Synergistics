@@ -1,0 +1,9 @@
+{
+    "AdvisorType": "MILITARY",
+    "Question": "What are your thoughts on the bugs found in our farmers fields?",
+    "Response": "I find it hard to believe that a couple of bugs could cause that much trouble! If you want some nerd to tell you the facts then speak to [SCHOLAR], I'm sure [SCHOLAR_GENDERED] have a 'solution'...",
+    "TraitWeightings": { "Aggressivness": 0.5 },
+    "RequiredFlags": [],
+    "BackgroundFlags": [],
+    "AdditionalData": {}
+}

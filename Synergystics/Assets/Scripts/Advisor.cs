@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -9,7 +11,7 @@ public enum AdvisorType
 
 public class Advisor : MonoBehaviour
 {
-    public struct AdvisorTraits
+    public class AdvisorTraits
     {
         public static readonly float EmptyValue = -2;
 
@@ -26,16 +28,67 @@ public class Advisor : MonoBehaviour
             Aggressivness = aggressivness;
         }
 
+        public AdvisorTraits()
+        {
+            Loyalty = EmptyValue;
+            Ambition = EmptyValue;
+            Stubornness = EmptyValue;
+            Aggressivness = EmptyValue;
+        }
+
+        // Generate traits for an advisor type
         public static AdvisorTraits GenerateFor(AdvisorType type)
         {
-            // TODO
+            // Select random values
+            switch(type)
+            {
+                case AdvisorType.AGRICULTURAL:
+                    return GameController.Instance.GameConfig.GetRandom(GameController.Instance.GameConfig.AgriAdvisorMinStats, GameController.Instance.GameConfig.AgriAdvisorMaxStats);
+                case AdvisorType.MILITARY:
+                    return GameController.Instance.GameConfig.GetRandom(GameController.Instance.GameConfig.MilitaryAdvisorMinStats, GameController.Instance.GameConfig.MilitaryAdvisorMaxStats);
+                case AdvisorType.SCHOLAR:
+                    return GameController.Instance.GameConfig.GetRandom(GameController.Instance.GameConfig.ScholarAdvisorMinStats, GameController.Instance.GameConfig.ScholarAdvisorMaxStats);
+            }
+
+            // Default return value
             return new AdvisorTraits(EmptyValue, EmptyValue, EmptyValue, EmptyValue);
         }
 
+        // Map a dictionary of traits to an actual trait object
         public static AdvisorTraits MapFrom(Dictionary<string, float> traitMap)
         {
-            // TODO
-            return new AdvisorTraits(EmptyValue, EmptyValue, EmptyValue, EmptyValue);
+            // Get fields
+            List<FieldInfo> fields = typeof(AdvisorTraits).GetFields().ToList();
+
+            // Create an object to edit
+            AdvisorTraits rObject = new AdvisorTraits();
+
+            foreach(KeyValuePair<string, float> entry in traitMap)
+            {
+                FieldInfo matchingField = fields.Find(x => x.Name.Equals(entry.Key, StringComparison.InvariantCultureIgnoreCase));
+                if(matchingField == null)
+                {
+                    Debug.LogWarning($"Could not map trait [{entry.Key}] to any existing trait");
+                } else
+                {
+                    if(!IsValidRange(entry.Value))
+                    {
+                        Debug.LogWarning($"Trait [{entry.Key}] was not mapped because value was out of range [{entry.Value}]");
+                    } else
+                    {
+                        // Set trait value
+                        matchingField.SetValue(rObject, entry.Value);
+                    }
+                }
+            }
+
+            return rObject;
+        }
+
+        // Returns true if the value is in the valid range (-1 <= value <= 1 or value == -2)
+        public static bool IsValidRange(float value)
+        {
+            return value == -2 || (value >= -1 && value <= 1);
         }
 
         // Checks each field in the struct to check if its 'empty' (i.e. all values are -2) 
@@ -100,6 +153,7 @@ public class Advisor : MonoBehaviour
     {
         // Register advisor name & type with replacement map
         GameController.Instance.ReplacementMap.Add(advisorType.ToString(), advisorName);
+
         // Create traits
         Traits = AdvisorTraits.GenerateFor(advisorType);
     }

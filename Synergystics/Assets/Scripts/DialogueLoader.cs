@@ -133,7 +133,7 @@ public class DialogueLoader
         AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), pfoc.GetValue("AdvisorType").ToObject<string>(), true);
         string question = pfoc.GetValue("Question").ToObject<string>();
         string response = pfoc.GetValue("Response").ToObject<string>();
-        Dictionary<string, float> traitWeightings = pfoc.GetValue("TraitWeightings").ToObject<Dictionary<string, float>>();
+        Dictionary<string, float> traitWeightings = pfoc.GetValue("TraitWeightings").ToObject<Dictionary<string, float>>();       
         HashSet<string> requiredFlags = pfoc.GetValue("RequiredFlags").ToObject<HashSet<string>>();
         HashSet<string> backgroundFlags = pfoc.GetValue("BackgroundFlags").ToObject<HashSet<string>>();
         JObject additionalData = pfoc.GetValue("AdditionalData").ToObject<JObject>();

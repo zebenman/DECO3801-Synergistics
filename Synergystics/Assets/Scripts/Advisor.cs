@@ -9,6 +9,11 @@ public enum AdvisorType
     DEFAULT, MILITARY, AGRICULTURAL, SCHOLAR
 }
 
+public enum AdvisorGender
+{
+    MALE, FEMALE, OTHER
+}
+
 public class Advisor : MonoBehaviour
 {
     public class AdvisorTraits
@@ -113,6 +118,9 @@ public class Advisor : MonoBehaviour
     [SerializeField]
     protected string advisorName;
 
+    [SerializeField]
+    protected AdvisorGender advisorGender = AdvisorGender.OTHER;
+
     public AdvisorTraits Traits { get; private set; }
 
     public AdvisorType GetAdvisorType()
@@ -123,6 +131,26 @@ public class Advisor : MonoBehaviour
     public string GetAdvisorName()
     {
         return advisorName;
+    }
+
+    public AdvisorGender GetAdvisorGender()
+    {
+        return advisorGender;
+    }
+
+    public string GetAdvisorGenderedReferal()
+    {
+        switch(GetAdvisorGender())
+        {
+            case AdvisorGender.OTHER:
+                return "they";
+            case AdvisorGender.FEMALE:
+                return "she";
+            case AdvisorGender.MALE:
+                return "he";
+        }
+
+        return "Error, gender unspecified";
     }
 
     // Return a list of dialogue options based on the current game state
@@ -153,6 +181,9 @@ public class Advisor : MonoBehaviour
     {
         // Register advisor name & type with replacement map
         GameController.Instance.ReplacementMap.Add(advisorType.ToString(), advisorName);
+
+        // Register gendered referal
+        GameController.Instance.ReplacementMap.Add($"{advisorType}_GENDERED", GetAdvisorGenderedReferal());
 
         // Create traits
         Traits = AdvisorTraits.GenerateFor(advisorType);

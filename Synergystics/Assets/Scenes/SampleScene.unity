@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   advisorType: 2
   advisorName: Terrance
+  advisorGender: 0
 --- !u!1 &364098261
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,8 +312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681c3caa9f4e30b49a815e6936ed9537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HasSelectedFocus: 0
-  LastSelectedOption: -1
   MaxFocusSelectionCount: 2
   Advisors:
   - {fileID: 1336015453}
@@ -364,6 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   advisorType: 3
   advisorName: Ivorius
+  advisorGender: 0
 --- !u!4 &1336015454
 Transform:
   m_ObjectHideFlags: 0
@@ -423,3 +423,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   advisorType: 1
   advisorName: Archibald
+  advisorGender: 0

@@ -2,9 +2,17 @@
 
 <h2>The Team</h2>
 
-Benedict Tan
-Ian Chern
-Tean-louise Cunningham
-Lachlan Frawley
-Kelvin Zhang
-Max Hornigold
+<ul>
+  <li>Benedict Tan</li>
+  <li>Ian Chern</li>
+  <li>Tean-louise Cunningham</li>
+  <li>Lachlan Frawley</li>
+  <li>Kelvin Zhang</li>
+  <li>Max Hornigold</li>
+</ul>
+
+
+
+
+
+

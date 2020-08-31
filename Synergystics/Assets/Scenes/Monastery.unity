@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -282.74982, y: -156.99992}
-  m_SizeDelta: {x: -699.9608, y: -347.68396}
+  m_AnchoredPosition: {x: -282.74982, y: -131.00002}
+  m_SizeDelta: {x: -699.9608, y: -306.76465}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338109856
 MonoBehaviour:
@@ -248,8 +248,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -282.74982, y: 74.59995}
-  m_SizeDelta: {x: -699.9608, y: -347.68396}
+  m_AnchoredPosition: {x: -282.74982, y: 60.300003}
+  m_SizeDelta: {x: -699.9608, y: -302.67963}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416813103
 MonoBehaviour:
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 469933422}
   - component: {fileID: 469933421}
   m_Layer: 5
-  m_Name: Farm Icon
+  m_Name: Monastery Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -421,8 +421,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 68, y: 68}
+  m_AnchoredPosition: {x: 0.00000095367, y: 0.0000047684}
+  m_SizeDelta: {x: 44.2285, y: 44.2285}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &469933421
 MonoBehaviour:
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1889330140afc54581bea8ede6b9d78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c8cc4681e6c77f94190733a2ee024879, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -669,8 +669,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -777,8 +777,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.8, y: -40.8}
-  m_SizeDelta: {x: -269.8711, y: -347.68408}
+  m_AnchoredPosition: {x: 44.19797, y: -40.799995}
+  m_SizeDelta: {x: -269.8711, y: -306.17215}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &806838918
 MonoBehaviour:
@@ -1024,8 +1024,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -282.74982, y: -40.8}
-  m_SizeDelta: {x: -699.9608, y: -347.68396}
+  m_AnchoredPosition: {x: -282.74982, y: -40.800003}
+  m_SizeDelta: {x: -699.9608, y: -315.9515}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &960067545
 MonoBehaviour:
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Farm
+  m_text: Monastery
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1319,8 +1319,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 21
+  m_fontSizeBase: 21
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1050488405}
-    characterCount: 4
+    characterCount: 9
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -1583,8 +1583,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.799, y: 74.6}
-  m_SizeDelta: {x: -269.87207, y: -347.68408}
+  m_AnchoredPosition: {x: 41.799, y: 60.3}
+  m_SizeDelta: {x: -269.87207, y: -307.9128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1113711099
 MonoBehaviour:
@@ -1674,7 +1674,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -356, y: 182.08}
+  m_AnchoredPosition: {x: -363.31, y: 141.49}
   m_SizeDelta: {x: -726.61395, y: -378.8026}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208026657
@@ -1994,8 +1994,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.799976, y: 180.1}
-  m_SizeDelta: {x: -311.0051, y: -375.48535}
+  m_AnchoredPosition: {x: 41.79902, y: 142.69003}
+  m_SizeDelta: {x: -311.0051, y: -318.28293}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517885496
 MonoBehaviour:
@@ -2046,7 +2046,7 @@ GameObject:
   - component: {fileID: 1627895226}
   - component: {fileID: 1627895225}
   m_Layer: 5
-  m_Name: Farm Background
+  m_Name: Monastery Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f70e4ddda2204f743afcfbcc31866b38, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc40c6a0eb531e94788f30cdb1673e25, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2144,8 +2144,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -282.74982, y: 180.1}
-  m_SizeDelta: {x: -710.42725, y: -410.29462}
+  m_AnchoredPosition: {x: -273.47, y: 141.49}
+  m_SizeDelta: {x: -693.7032, y: -318.22485}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643210089
 MonoBehaviour:
@@ -2235,8 +2235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.8, y: -157}
-  m_SizeDelta: {x: -269.87085, y: -347.68408}
+  m_AnchoredPosition: {x: 44.198, y: -129.67}
+  m_SizeDelta: {x: -269.87085, y: -309.4267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757094747
 MonoBehaviour:
@@ -2393,8 +2393,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 347.5, y: 195}
-  m_SizeDelta: {x: 91.20108, y: 45.252403}
+  m_AnchoredPosition: {x: 348.03, y: 142.69}
+  m_SizeDelta: {x: 77.53516, y: 38.47161}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871756845
 MonoBehaviour:

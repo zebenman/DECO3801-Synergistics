@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -282.74982, y: -156.99992}
+  m_AnchoredPosition: {x: -282.74982, y: -138.6}
   m_SizeDelta: {x: -699.9608, y: -347.68396}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &338109856
@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 469933422}
   - component: {fileID: 469933421}
   m_Layer: 5
-  m_Name: Monastery Icon
+  m_Name: TownHall Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -458,7 +458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8cc4681e6c77f94190733a2ee024879, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 63a5f223f0f140640b031c3d4be4b6d5, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1269,8 +1269,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.67245483, y: 0}
+  m_SizeDelta: {x: 1.3449173, y: 4.2835426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050488405
 MonoBehaviour:
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Monastery
+  m_text: Town Hall
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1319,16 +1319,16 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 514
-  m_characterSpacing: 1
-  m_wordSpacing: 0
+  m_characterSpacing: 0
+  m_wordSpacing: -1
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
@@ -1362,8 +1362,8 @@ MonoBehaviour:
     textComponent: {fileID: 1050488405}
     characterCount: 9
     spriteCount: 0
-    spaceCount: 0
-    wordCount: 1
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1674,8 +1674,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -356, y: 182.08}
-  m_SizeDelta: {x: -726.61395, y: -378.8026}
+  m_AnchoredPosition: {x: -356, y: 145.95}
+  m_SizeDelta: {x: -726.61395, y: -443.77884}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1208026657
 MonoBehaviour:
@@ -1994,8 +1994,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.799976, y: 180.1}
-  m_SizeDelta: {x: -311.0051, y: -375.48535}
+  m_AnchoredPosition: {x: 41.799976, y: 157.08}
+  m_SizeDelta: {x: -311.0051, y: -340.9709}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1517885496
 MonoBehaviour:
@@ -2046,7 +2046,7 @@ GameObject:
   - component: {fileID: 1627895226}
   - component: {fileID: 1627895225}
   m_Layer: 5
-  m_Name: Monastery Background
+  m_Name: TownHall Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dc40c6a0eb531e94788f30cdb1673e25, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19db2ba8c186a11418ffb833a5ad99a1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2144,8 +2144,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -273.5, y: 180.1}
-  m_SizeDelta: {x: -693.7032, y: -410.29462}
+  m_AnchoredPosition: {x: -261.6, y: 158.8}
+  m_SizeDelta: {x: -690.91797, y: -337.5313}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643210089
 MonoBehaviour:
@@ -2235,7 +2235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.8, y: -157}
+  m_AnchoredPosition: {x: 41.798, y: -138.6}
   m_SizeDelta: {x: -269.87085, y: -347.68408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1757094747
@@ -2393,7 +2393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 347.5, y: 195}
+  m_AnchoredPosition: {x: 346.3, y: 155.53}
   m_SizeDelta: {x: 91.20108, y: 45.252403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1871756845

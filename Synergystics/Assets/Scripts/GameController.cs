@@ -103,6 +103,8 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this);
+
         // Set singleton instance
         Instance = this;
     }

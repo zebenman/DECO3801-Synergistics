@@ -6,32 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
-    //public Button yourButton;
-
-    // Start is called before the first frame update
-    //void Start()
-    //{
-        //Button btn = yourButton.GetComponent<Button>();
-        //btn.onClick.AddListener(TaskOnClick);
-
-    //}
-
-    // Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
-
-    //void TaskOnClick()
-    //{
-    //    Debug.Log("You have clicked the button!");
-    //}
-
     // Load a given scene
     public void Btn_change_scene(string scene_name)
-    {
-        SceneManager.LoadScene(scene_name);
+    {       
+        SceneManager.LoadSceneAsync(scene_name).completed += (a) =>
+        {                        
+            GameController.Instance.OnSceneTransition(scene_name);
+        };
     }
-
-
 }

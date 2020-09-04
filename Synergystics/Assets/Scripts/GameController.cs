@@ -112,4 +112,9 @@ public class GameController : MonoBehaviour
         // Set singleton instance
         Instance = this;
     }
+
+    public void OnSceneTransition(string scene)
+    {
+        // TODO?
+    }
 }

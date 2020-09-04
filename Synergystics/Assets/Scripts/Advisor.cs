@@ -41,6 +41,20 @@ public class Advisor : MonoBehaviour
             Aggressivness = EmptyValue;
         }
 
+        public AdvisorTraits ApplyToAll(float change)
+        {
+            AdvisorTraits newTraits = new AdvisorTraits();
+
+            foreach(FieldInfo field in typeof(AdvisorTraits).GetFields())
+            {
+                float modified = change + (float)field.GetValue(this);
+                modified = Mathf.Clamp(modified, -1, 1);
+                field.SetValue(newTraits, modified);
+            }
+
+            return newTraits;
+        }
+
         // Generate traits for an advisor type
         public static AdvisorTraits GenerateFor(AdvisorType type)
         {
@@ -48,11 +62,11 @@ public class Advisor : MonoBehaviour
             switch(type)
             {
                 case AdvisorType.AGRICULTURAL:
-                    return GameController.Instance.GameConfig.GetRandom(GameController.Instance.GameConfig.AgriAdvisorMinStats, GameController.Instance.GameConfig.AgriAdvisorMaxStats);
+                    return GameConfig.GetRandom(GameController.Instance.GameConfig.AgriAdvisorMinStats, GameController.Instance.GameConfig.AgriAdvisorMaxStats);
                 case AdvisorType.MILITARY:
-                    return GameController.Instance.GameConfig.GetRandom(GameController.Instance.GameConfig.MilitaryAdvisorMinStats, GameController.Instance.GameConfig.MilitaryAdvisorMaxStats);
+                    return GameConfig.GetRandom(GameController.Instance.GameConfig.MilitaryAdvisorMinStats, GameController.Instance.GameConfig.MilitaryAdvisorMaxStats);
                 case AdvisorType.SCHOLAR:
-                    return GameController.Instance.GameConfig.GetRandom(GameController.Instance.GameConfig.ScholarAdvisorMinStats, GameController.Instance.GameConfig.ScholarAdvisorMaxStats);
+                    return GameConfig.GetRandom(GameController.Instance.GameConfig.ScholarAdvisorMinStats, GameController.Instance.GameConfig.ScholarAdvisorMaxStats);
             }
 
             // Default return value
@@ -123,6 +137,13 @@ public class Advisor : MonoBehaviour
 
     public AdvisorTraits Traits { get; private set; }
 
+    public AdvisorTraits RolledTraits { get; private set; }
+
+    public void ProgressTurn()
+    {
+        RolledTraits = GameConfig.GetRandom(Traits.ApplyToAll(-0.1f), Traits.ApplyToAll(0.1f));
+    }
+
     public AdvisorType GetAdvisorType()
     {
         return advisorType;
@@ -187,5 +208,8 @@ public class Advisor : MonoBehaviour
 
         // Create traits
         Traits = AdvisorTraits.GenerateFor(advisorType);
+
+        // Immediately roll
+        ProgressTurn();
     }
 }

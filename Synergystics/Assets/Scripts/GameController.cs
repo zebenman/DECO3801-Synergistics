@@ -16,6 +16,10 @@ public class GameController : MonoBehaviour
     // Dialogue loader that reads dialogue information from file
     public readonly DialogueLoader DialogugeLoader = new DialogueLoader("Resources\\Dialogue");
 
+    // Event loader that reads event data from file
+    public readonly EventLoader EventLoader = new EventLoader("Resources\\Events");
+
+    // Config file that reads/writes config information
     public readonly GameConfig GameConfig = GameConfig.LoadFrom("Resources\\config.json", true);
 
     // Flag describing if the user has selected a focus (hidden from Unity inspector)
@@ -34,7 +38,7 @@ public class GameController : MonoBehaviour
     public GameEvent LastSelectedEvent = null;
 
     // Maximum number of focuses
-    public int MaxFocusSelectionCount = 2;
+    public int MaxFocusSelectionCount = 1;
 
     // Advisor List
     public List<Advisor> Advisors;
@@ -107,10 +111,5 @@ public class GameController : MonoBehaviour
 
         // Set singleton instance
         Instance = this;
-    }
-
-    private void Start()
-    {
-        // Will probably use at some point
     }
 }

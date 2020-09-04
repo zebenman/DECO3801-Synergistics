@@ -28,7 +28,7 @@ public class GameConfig
 
     // Gets a random trait based on the min and max
     // This method should never have to be changed even if there are more traits
-    public Advisor.AdvisorTraits GetRandom(Advisor.AdvisorTraits min, Advisor.AdvisorTraits max)
+    public static Advisor.AdvisorTraits GetRandom(Advisor.AdvisorTraits min, Advisor.AdvisorTraits max)
     {
         // Create return object
         Advisor.AdvisorTraits rTraits = new Advisor.AdvisorTraits();

@@ -1,0 +1,12 @@
+{
+    "EventID": 0,
+    "MapSource": "SOURCE",
+    "IsValidStory": false,
+    "StoryDescriptor": "",
+    "OutcomeDescriptor": "",
+    "ShortOutcomeDescriptor": "",
+    "PreSelectionPrefix": "PSO",
+    "SolutionOpinionPrefix": "ASO",
+    "EventSolutionPrefix": "EVS",
+    "DataFolder": "*_Data"
+}

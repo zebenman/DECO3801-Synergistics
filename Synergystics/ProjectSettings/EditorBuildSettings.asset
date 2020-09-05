@@ -4,5 +4,44 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 684d537d1f01ab74db5aced58d6f3340
+  - enabled: 1
+    path: Assets/Scenes/WelcomeScreen.unity
+    guid: 6cacdfc74b367204984e9765cd1cb838
+  - enabled: 1
+    path: Assets/Scenes/ThroneRoom.unity
+    guid: d507e54002b22bf40bfa05ffb84416c5
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: efb9f97506f649c488cd946a2c7d529d
+  - enabled: 1
+    path: Assets/Scenes/CouncilRoom.unity
+    guid: 96ea67092a114184096182d206c24ac8
+  - enabled: 1
+    path: Assets/Scenes/Farm.unity
+    guid: 42c0ab2f001d00e4ebef3406b85ff77f
+  - enabled: 1
+    path: Assets/Scenes/Monastery.unity
+    guid: 755025d7db180764cb31f691bc53948f
+  - enabled: 1
+    path: Assets/Scenes/TownHall.unity
+    guid: 9e153b8ac1d3d1848a1e6be8ce4c7f46
+  - enabled: 1
+    path: Assets/Scenes/TownSquare.unity
+    guid: 131936c53c45ae14b9d5cc160f0b355a
+  - enabled: 1
+    path: Assets/Scenes/AgriculturalAdvisorBio.unity
+    guid: b889f609cd634b844951d374a9d3d338
+  - enabled: 1
+    path: Assets/Scenes/InformationScreen.unity
+    guid: 95d93f00d6af68e4284c798c27e98556
+  - enabled: 1
+    path: Assets/Scenes/MilitaryCommanderBio.unity
+    guid: 9c23937f58f075d4d9a89761a514f443
+  - enabled: 1
+    path: Assets/Scenes/ScholarBio.unity
+    guid: 55544966b746666409bcb8bf91775be5
   m_configObjects: {}

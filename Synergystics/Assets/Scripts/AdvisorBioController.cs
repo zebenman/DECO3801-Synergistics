@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AdvisorBioController : MonoBehaviour
 {
@@ -25,5 +26,14 @@ public class AdvisorBioController : MonoBehaviour
             ActionDescriptorText[i].text = active.EventSolutions.Find(x => x.SolutionIndex == i).ActionDescription;
             ActionOpinionText[i].text = active.SolutionOpinions.Where(x => x.SolutionIndex == i).ToList().Find(x => x.AdvisorType == AdvisorType).Opinion;
         }
+    }
+
+    public void ReturnToCouncil()
+    {
+        SceneManager.LoadSceneAsync("CouncilRoom").completed += (a) =>
+        {
+            GameController.Instance.OnSceneTransition("CouncilRoom");
+            FindObjectOfType<CouncilRoomController>().SwitchUIMode();
+        };
     }
 }

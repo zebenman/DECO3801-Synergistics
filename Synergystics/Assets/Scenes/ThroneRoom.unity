@@ -1137,8 +1137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -282, y: 157.6}
-  m_SizeDelta: {x: -583.25433, y: -335.79196}
+  m_AnchoredPosition: {x: -282, y: 187.64}
+  m_SizeDelta: {x: -583.25433, y: -395.8729}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1661732760
 MonoBehaviour:
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 49.317253, z: 0, w: 0}
+  m_margin: {x: 0, y: 53.608444, z: 0, w: 4.29119}
   m_textInfo:
     textComponent: {fileID: 2130593428}
     characterCount: 11

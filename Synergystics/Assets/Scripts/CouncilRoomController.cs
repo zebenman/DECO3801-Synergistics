@@ -55,13 +55,13 @@ public class CouncilRoomController : MonoBehaviour
         switch (aType)
         {
             case AdvisorType.MILITARY:
-                ButtonScript.Btn_change_scene("MilitaryCommanderBio");
+                ButtonScript.Btn_change_scene(SceneInformation.MILITARY_BIO);
                 break;
             case AdvisorType.SCHOLAR:
-                ButtonScript.Btn_change_scene("MilitaryCommanderBio");
+                ButtonScript.Btn_change_scene(SceneInformation.SCHOLAR_BIO);
                 break;
             case AdvisorType.AGRICULTURAL:
-                ButtonScript.Btn_change_scene("MilitaryCommanderBio");
+                ButtonScript.Btn_change_scene(SceneInformation.AGRICULTURAL_BIO);
                 break;
         }
     }

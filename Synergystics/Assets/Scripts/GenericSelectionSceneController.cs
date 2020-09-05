@@ -85,7 +85,7 @@ public class GenericSelectionSceneController : MonoBehaviour
         if(GameController.Instance.HasSelectedFocus)
         {
             BackButton.onClick = new Button.ButtonClickedEvent();
-            BackButton.onClick.AddListener(new UnityEngine.Events.UnityAction(() => ButtonScript.Btn_change_scene("ThroneRoom")));
+            BackButton.onClick.AddListener(new UnityEngine.Events.UnityAction(() => ButtonScript.Btn_change_scene(SceneInformation.THRONE_ROOM)));
             BackButtonText.text = "To Throne Room";
         }
     }

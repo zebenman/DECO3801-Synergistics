@@ -32,4 +32,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TownSquare.unity
     guid: 131936c53c45ae14b9d5cc160f0b355a
+  - enabled: 1
+    path: Assets/Scenes/AdvisorBio.unity
+    guid: b889f609cd634b844951d374a9d3d338
+  - enabled: 1
+    path: Assets/Scenes/InformationScreen.unity
+    guid: 95d93f00d6af68e4284c798c27e98556
+  - enabled: 1
+    path: Assets/Scenes/MilitaryCommanderBio.unity
+    guid: 9c23937f58f075d4d9a89761a514f443
+  - enabled: 1
+    path: Assets/Scenes/ScholarBio.unity
+    guid: 55544966b746666409bcb8bf91775be5
   m_configObjects: {}

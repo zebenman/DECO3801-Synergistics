@@ -175,7 +175,7 @@ public class Advisor : MonoBehaviour
     }
 
     // Return a list of dialogue options based on the current game state
-    public List<string> GetDialogueOptions()
+    /*public List<string> GetDialogueOptions()
     {
         List<GameEvent> selectionList = GameController.Instance.HasSelectedFocus ? GameController.Instance.GetFocusedEvents() : GameController.Instance.GetPossibleEvents();
         List<string> lines = new List<string>();
@@ -196,7 +196,7 @@ public class Advisor : MonoBehaviour
     public string GetDialogueResponse()
     {
         return GameController.Instance.DialogugeLoader.FindDialogue(GameController.Instance.LastSelectedEvent, this, GameController.Instance.HasSelectedFocus, true);
-    }
+    }*/
 
     private void Awake()
     {

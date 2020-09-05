@@ -191,7 +191,7 @@ public class DialogueLoader
         ResponseVariantData[aType] = foundResponseVariant;
     }
 
-    public string FindDialogue(GameEvent relatedEvent, Advisor advisor, bool isFocusSelected, bool isResponse)
+    public string FindDialogue(EventData relatedEvent, Advisor advisor, bool isFocusSelected, bool isResponse)
     {
         // Get the list containing what selection we want
         List<DialogueVariants> selection = isResponse ? AllResponseVariants : AllDialogueVariants;

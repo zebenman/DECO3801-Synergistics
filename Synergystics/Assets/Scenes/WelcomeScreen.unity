@@ -699,6 +699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 956797924}
   - component: {fileID: 956797923}
+  - component: {fileID: 956797925}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -718,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681c3caa9f4e30b49a815e6936ed9537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxFocusSelectionCount: 2
+  MaxFocusSelectionCount: 1
   Advisors:
   - {fileID: 1336015453}
   - {fileID: 1674186203}
@@ -738,6 +739,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &956797925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956797922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93014191441c6124eaa663881a49c226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AreYouSurePrefab: {fileID: 1033998008419309898, guid: 5152e6f7bd1703d4990906ac3727f8cf,
+    type: 3}
 --- !u!1 &1137497546
 GameObject:
   m_ObjectHideFlags: 0

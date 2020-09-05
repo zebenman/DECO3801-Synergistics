@@ -9,6 +9,8 @@ using UnityEngine.UI;
 
 public static class Utilities
 {
+    public static readonly Color DarkGrey = new Color(66f / 255f, 66f / 255f, 66f / 255f);
+    public static readonly string[] MapSources = { "FARM", "TOWN_HALL", "TOWN_SQUARE", "MONASTERY" };
     public static void SetWidgetColorRecursive(GameObject root, Color color, params GameObject[] ignore)
     {
         if (ignore.Contains(root))
@@ -36,6 +38,14 @@ public static class Utilities
         if (rootText != null)
         {
             rootText.color = color;
+        }
+    }
+
+    public static IEnumerable<(int index, T value)> IndexedForeach<T>(this IEnumerable<T> self)
+    {
+        for(int i = 0; i < self.Count(); i++)
+        {
+            yield return (i, self.ElementAt(i));
         }
     }
 }

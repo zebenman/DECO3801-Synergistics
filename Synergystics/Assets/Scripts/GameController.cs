@@ -14,10 +14,12 @@ public class GameController : MonoBehaviour
     public readonly HashSet<string> BackgroundFlags = new HashSet<string>();
 
     // Dialogue loader that reads dialogue information from file
-    public readonly DialogueLoader DialogugeLoader = new DialogueLoader("Resources\\Dialogue");
+    //public readonly DialogueLoader DialogugeLoader = new DialogueLoader("Resources\\Dialogue");
 
     // Event loader that reads event data from file
-    public readonly EventLoader EventLoader = new EventLoader("Resources\\Events");
+    //public readonly EventLoader EventLoader = new EventLoader("Resources\\Events");
+
+    public readonly DataLoader DataLoader = new DataLoader("Resources\\Events");
 
     // Config file that reads/writes config information
     public readonly GameConfig GameConfig = GameConfig.LoadFrom("Resources\\config.json", true);
@@ -35,7 +37,7 @@ public class GameController : MonoBehaviour
     // Last event selected (hidden from Unity inspector)
     [HideInInspector]
     [NonSerialized]
-    public GameEvent LastSelectedEvent = null;
+    public EventData LastSelectedEvent = null;
 
     // Maximum number of focuses
     public int MaxFocusSelectionCount = 1;
@@ -44,24 +46,17 @@ public class GameController : MonoBehaviour
     public List<Advisor> Advisors;
 
     // Internal list of possible events that has been buffered so that list order is always the same
-    private List<GameEvent> BufferedPossibleEvents;
+    private List<EventData> BufferedPossibleEvents;
 
     // Internal list of focused events
-    private List<GameEvent> FocusedEvents;
+    private List<EventData> FocusedEvents;
 
     private void SelectPossibleEvents()
     {
-        // TODO - Testing
-        BufferedPossibleEvents = new List<GameEvent>()
-        {
-            new GameEvent(0, "Bugs were spotted in several of our farmers fields"), 
-            new GameEvent(1, "Obvious red herring 1"),
-            new GameEvent(2, "Obvious red herring 2"),
-            new GameEvent(3, "Obvious red herring 3")
-        };
+        BufferedPossibleEvents = new List<EventData>(DataLoader.GetEvents());
     }
 
-    public List<GameEvent> GetPossibleEvents()
+    public List<EventData> GetPossibleEvents()
     {
         if(BufferedPossibleEvents == null || BufferedPossibleEvents.Count == 0)
         {
@@ -72,7 +67,18 @@ public class GameController : MonoBehaviour
         return BufferedPossibleEvents;
     }
 
-    public List<GameEvent> GetFocusedEvents()
+    public void AddFocusedEvent(EventData gameEvent)
+    {
+        if (HasSelectedFocus) return;
+
+        GetFocusedEvents().Add(gameEvent);
+        if(GetFocusedEvents().Count == MaxFocusSelectionCount)
+        {
+            HasSelectedFocus = true;
+        }
+    }
+
+    public List<EventData> GetFocusedEvents()
     {
         if(FocusedEvents == null && HasSelectedFocus)
         {
@@ -83,11 +89,10 @@ public class GameController : MonoBehaviour
         {
             Debug.LogWarning("Focused Event list is empty despite focus being selected!");
         }
-
-        // TODO - should do something else?
+        
         if(FocusedEvents == null)
         {
-            FocusedEvents = new List<GameEvent>() { GetPossibleEvents()[0] };
+            FocusedEvents = new List<EventData>();
         }
 
         return FocusedEvents;

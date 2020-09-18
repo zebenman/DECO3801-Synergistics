@@ -18,4 +18,6 @@ public static class SceneInformation
     public const string FARM = "Farm";
     public const string COUNCIL_ROOM = "CouncilRoom";
     public const string AGRICULTURAL_BIO = "AgriculturalAdvisorBio";
+    public const string TAVERN = "Tavern";
+    public const string BARRACKS = "Barracks";
 }

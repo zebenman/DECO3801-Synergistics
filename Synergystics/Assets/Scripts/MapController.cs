@@ -10,6 +10,8 @@ public class MapController : MonoBehaviour
     public Button TownSquareWidget;
     public Button TownHallWidget;
     public Button MonasteryWidget;
+    public Button TavernWidget;
+    public Button BarracksWidget;
 
     public void Start()
     {
@@ -31,6 +33,12 @@ public class MapController : MonoBehaviour
                     break;
                 case "TOWN_HALL":
                     rootObject = TownHallWidget;
+                    break;
+                case "TAVERN":
+                    rootObject = TavernWidget;
+                    break;
+                case "BARRACKS":
+                    rootObject = BarracksWidget;
                     break;
             }
             rootObject.enabled = false;

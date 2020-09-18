@@ -44,4 +44,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ScholarBio.unity
     guid: 55544966b746666409bcb8bf91775be5
+  - enabled: 1
+    path: Assets/Scenes/Tavern.unity
+    guid: a685b569acb96d14fa531732dae0b4b8
+  - enabled: 1
+    path: Assets/Scenes/Barracks.unity
+    guid: aaf48bb3b4354cb43846a054abc080ef
   m_configObjects: {}

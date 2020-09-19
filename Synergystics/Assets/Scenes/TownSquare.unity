@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_text
-      value: Town Square
+      value: Town Market
       objectReference: {fileID: 0}
     - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
@@ -357,7 +357,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d37c48616cb2d7a4fa6045df157756e3,
+      objectReference: {fileID: 21300000, guid: 497c961297da1854aa011a320b6f025b,
         type: 3}
     - target: {fileID: 8211810233212399479, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
@@ -852,7 +852,7 @@ GameObject:
   - component: {fileID: 1627895226}
   - component: {fileID: 1627895225}
   m_Layer: 5
-  m_Name: TownSquare Background
+  m_Name: TownMarket Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -896,7 +896,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 00780e7ff93973240862faf486632789, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 14fe2a587b55abf47b72739c13af9f23, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

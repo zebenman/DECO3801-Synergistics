@@ -547,6 +547,36 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.9019608
       objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_text
+      value: Farm
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8211810232701377615, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -557,6 +587,12 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: -109.20059
       objectReference: {fileID: 0}
+    - target: {fileID: 8211810233212399477, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1889330140afc54581bea8ede6b9d78,
+        type: 3}
     - target: {fileID: 8211810234079072576, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_Color.a
@@ -632,6 +668,11 @@ PrefabInstance:
       propertyPath: Canvas
       value: 
       objectReference: {fileID: 602775743}
+    - target: {fileID: 8211810234556613806, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: MapSource
+      value: FARM
+      objectReference: {fileID: 0}
     - target: {fileID: 8211810234556613807, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_Name

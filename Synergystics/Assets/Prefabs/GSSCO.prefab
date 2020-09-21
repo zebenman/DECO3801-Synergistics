@@ -363,13 +363,13 @@ MonoBehaviour:
   m_margin: {x: 9.434144, y: 6.289429, z: 17.2959, w: 3.1446898}
   m_textInfo:
     textComponent: {fileID: 9214161115002388543}
-    characterCount: 29
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 3
-    wordCount: 4
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -704,8 +704,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 40.3, y: 2}
-  m_SizeDelta: {x: -147.24765, y: 4}
+  m_AnchoredPosition: {x: 50.88, y: 2}
+  m_SizeDelta: {x: -123.675354, y: 4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8211810232701377613
 CanvasRenderer:
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Farm
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -765,9 +765,9 @@ MonoBehaviour:
   m_fontSize: 60
   m_fontSizeBase: 60
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 45
+  m_fontSizeMax: 60
   m_fontStyle: 0
   m_textAlignment: 514
   m_characterSpacing: 1
@@ -803,13 +803,13 @@ MonoBehaviour:
   m_margin: {x: -0.9287206, y: 0, z: 0.92871916, w: 0}
   m_textInfo:
     textComponent: {fileID: 8211810232701377614}
-    characterCount: 4
+    characterCount: 0
     spriteCount: 0
     spaceCount: 0
-    wordCount: 1
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1206,13 +1206,13 @@ MonoBehaviour:
   m_margin: {x: -2.7894084, y: 0, z: -2.7894082, w: 0}
   m_textInfo:
     textComponent: {fileID: 8211810232829067380}
-    characterCount: 13
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 4
-    wordCount: 3
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 2
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1364,13 +1364,13 @@ MonoBehaviour:
   m_margin: {x: 9.434144, y: 6.289429, z: 17.2959, w: 3.1446898}
   m_textInfo:
     textComponent: {fileID: 8211810232929192338}
-    characterCount: 14
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 2
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -1543,7 +1543,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1889330140afc54581bea8ede6b9d78, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -2795,7 +2795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7048e08630cf9544893017178c5efd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MapSource: FARM
+  MapSource: 
   Canvas: {fileID: 0}
   StoryText: {fileID: 8211810232701916786}
   AdvisorText:

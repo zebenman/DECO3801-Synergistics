@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/AgriculturalAdvisorBio.unity
     guid: b889f609cd634b844951d374a9d3d338
   - enabled: 1
-    path: Assets/Scenes/InformationScreen.unity
+    path: Assets/Scenes/SummaryScreen.unity
     guid: 95d93f00d6af68e4284c798c27e98556
   - enabled: 1
     path: Assets/Scenes/MilitaryCommanderBio.unity

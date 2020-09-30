@@ -378,8 +378,11 @@ MonoBehaviour:
     that could not be verified.
 
 
-    The advisor opinions on the matter were most
-    irrelevant.'
+    This story was structured more like a person''s
+    opinion
+
+
+    The advisor opinions on the matter were most irrelevant.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -407,7 +410,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 45
+  m_fontSize: 44.45
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -448,12 +451,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 581931396}
-    characterCount: 237
+    characterCount: 293
     spriteCount: 0
-    spaceCount: 41
-    wordCount: 40
+    spaceCount: 51
+    wordCount: 49
     linkCount: 0
-    lineCount: 8
+    lineCount: 10
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -930,7 +933,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 10, y: -0.0000076293945}
-  m_SizeDelta: {x: 1485, y: 964.2478}
+  m_SizeDelta: {x: 1500, y: 975}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662541435
 MonoBehaviour:

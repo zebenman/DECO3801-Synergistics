@@ -435,8 +435,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000052133, y: -0.00000095367}
-  m_SizeDelta: {x: 1112.9841, y: 720.3735}
+  m_AnchoredPosition: {x: 0.000022888, y: -0.00000095367}
+  m_SizeDelta: {x: 1050, y: 720}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581931396
 MonoBehaviour:
@@ -497,8 +497,8 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 25
   m_fontSizeMax: 50
-  m_fontStyle: 0
-  m_textAlignment: 514
+  m_fontStyle: 1
+  m_textAlignment: 520
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -597,8 +597,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00047935, y: 281}
-  m_SizeDelta: {x: 1112.9846, y: 140.78008}
+  m_AnchoredPosition: {x: 10, y: 288.6}
+  m_SizeDelta: {x: 1150, y: 115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851330580
 MonoBehaviour:
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Here is the overview of the decision you made:'
+  m_text: Summary of Decision
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 42df1c7856584b6b8db9a509b6b10074, type: 2}
@@ -647,12 +647,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50
+  m_fontSize: 75
   m_fontSizeBase: 31
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 30
-  m_fontSizeMax: 50
+  m_fontSizeMax: 75
   m_fontStyle: 1
   m_textAlignment: 514
   m_characterSpacing: 0
@@ -688,10 +688,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 851330580}
-    characterCount: 46
+    characterCount: 19
     spriteCount: 0
-    spaceCount: 8
-    wordCount: 9
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -734,7 +734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1033628316
 RectTransform:
   m_ObjectHideFlags: 0
@@ -749,7 +749,7 @@ RectTransform:
   - {fileID: 269071153}
   - {fileID: 1626146849}
   m_Father: {fileID: 1308123708}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -771,7 +771,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1174438591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ RectTransform:
   - {fileID: 1662541434}
   - {fileID: 513774910}
   m_Father: {fileID: 1308123708}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -884,8 +884,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 397315746}
-  - {fileID: 1174438591}
   - {fileID: 1033628316}
+  - {fileID: 1174438591}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1447,8 +1447,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00025177002, y: -90.9}
-  m_SizeDelta: {x: 1112.9841, y: 562.55963}
+  m_AnchoredPosition: {x: 0.0000039871957, y: -77.5}
+  m_SizeDelta: {x: 1100, y: 575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1867587238
 MonoBehaviour:
@@ -1469,16 +1469,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The focus you selected managed to mitigate majority of the damage cause
-    by the major event.
+  m_text: 'The story you selected came from a trustworthy source.
 
 
-    The story you selected came from a trustworthy source.
+    The advisor
+    opinions on the story played an important role in guiding you to select the most
+    appropriate choice.
 
-
-    The
-    advisor opinions on the story played an important role in guiding you to select
-    the most appropriate choice.'
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1506,14 +1504,14 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 45
+  m_fontSize: 50
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 20
-  m_fontSizeMax: 45
+  m_fontSizeMax: 50
   m_fontStyle: 0
-  m_textAlignment: 514
+  m_textAlignment: 264
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1547,12 +1545,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1867587238}
-    characterCount: 261
+    characterCount: 169
     spriteCount: 0
-    spaceCount: 45
-    wordCount: 44
+    spaceCount: 29
+    wordCount: 28
     linkCount: 0
-    lineCount: 8
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

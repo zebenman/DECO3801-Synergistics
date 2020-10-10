@@ -7,8 +7,8 @@ using UnityEngine;
 public static class SceneInformation
 {
     public const string WELCOME_SCREEN = "WelcomeScreen";
-    public const string TOWN_SQUARE = "TownSquare";
-    public const string TOWN_HALL = "TownHall";
+    public const string TOWN_MARKET = "TownMarket";
+    public const string DUNGEON = "Dungeon";
     public const string THRONE_ROOM = "ThroneRoom";
     public const string SCHOLAR_BIO = "ScholarBio";
     public const string MONASTERY = "Monastery";

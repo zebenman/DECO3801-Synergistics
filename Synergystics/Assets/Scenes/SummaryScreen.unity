@@ -353,15 +353,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 2024241951}
+        m_MethodName: Btn_change_scene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: WelcomeScreen
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &513774912
@@ -457,13 +457,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time has passed and a locut swarm attacked the fields of the kingdom,
+  m_text: 'Time has passed and a locust swarm attacked the fields of the kingdom,
     eating up the crops and destroying the harvest for that year.
 
 
-    Thankful,
-    your intuition and wise decision saved the helped to alleviate the famine problem
-    caused the this disaster.'
+    Thankfully,
+    your intuition and wise decision  helped to alleviate the famine problem caused
+    this disaster.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -532,10 +532,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 581931396}
-    characterCount: 250
+    characterCount: 240
     spriteCount: 0
-    spaceCount: 42
-    wordCount: 42
+    spaceCount: 40
+    wordCount: 39
     linkCount: 0
     lineCount: 7
     pageCount: 1
@@ -749,7 +749,7 @@ RectTransform:
   - {fileID: 269071153}
   - {fileID: 1626146849}
   m_Father: {fileID: 1308123708}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -779,14 +779,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174438590}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1662541434}
   - {fileID: 513774910}
   m_Father: {fileID: 1308123708}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -884,8 +884,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 397315746}
-  - {fileID: 1033628316}
   - {fileID: 1174438591}
+  - {fileID: 1033628316}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1141,7 +1141,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: WelcomeScreen
+          m_StringArgument: IntermissionScreen
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1626146851
@@ -1472,11 +1472,13 @@ MonoBehaviour:
   m_text: 'The story you selected came from a trustworthy source.
 
 
-    The advisor
+    The advisors''
     opinions on the story played an important role in guiding you to select the most
     appropriate choice.
 
-'
+
+    You managed to detect the unbaiseness of some of the
+    advisors'' opinions by the way the sentences were structured.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1504,12 +1506,12 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50
+  m_fontSize: 45
   m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 20
-  m_fontSizeMax: 50
+  m_fontSizeMax: 45
   m_fontStyle: 0
   m_textAlignment: 264
   m_characterSpacing: 0
@@ -1545,12 +1547,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1867587238}
-    characterCount: 169
+    characterCount: 285
     spriteCount: 0
-    spaceCount: 29
-    wordCount: 28
+    spaceCount: 48
+    wordCount: 47
     linkCount: 0
-    lineCount: 6
+    lineCount: 8
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

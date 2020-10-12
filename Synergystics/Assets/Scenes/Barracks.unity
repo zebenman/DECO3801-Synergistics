@@ -194,19 +194,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1737370427}
     m_Modifications:
-    - target: {fileID: 628980756, guid: 684053e19927bc843a1fc788921d8251, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_text
-      value: '[BARRACKS TITLE HERE]'
+      value: '[TITLE]'
       objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 21
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8211810232701377614, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
@@ -223,11 +229,12 @@ PrefabInstance:
       propertyPath: m_textInfo.characterCount
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 8211810234527224800, guid: 684053e19927bc843a1fc788921d8251,
+    - target: {fileID: 8211810233212399477, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2d2796e9e8d42324e8a1df6f38eef9fe,
+        type: 3}
     - target: {fileID: 8211810234556613805, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 237278225}
   - component: {fileID: 237278224}
   m_Layer: 5
-  m_Name: Town Square Button
+  m_Name: Town Market Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1774,10 +1774,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FarmWidget: {fileID: 2070445926}
-  TownSquareWidget: {fileID: 237278225}
-  TownHallWidget: {fileID: 801609712}
-  MonasteryWidget: {fileID: 445824576}
+  TownMarketWidget: {fileID: 237278225}
   TavernWidget: {fileID: 1476534815}
+  MonasteryWidget: {fileID: 445824576}
+  DungeonWidget: {fileID: 801609712}
   BarracksWidget: {fileID: 586893024}
 --- !u!4 &1158885102
 Transform:

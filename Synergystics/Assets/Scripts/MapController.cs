@@ -7,10 +7,10 @@ using TMPro;
 public class MapController : MonoBehaviour
 {
     public Button FarmWidget;
-    public Button TownSquareWidget;
-    public Button TownHallWidget;
-    public Button MonasteryWidget;
+    public Button TownMarketWidget;
     public Button TavernWidget;
+    public Button MonasteryWidget;
+    public Button DungeonWidget;
     public Button BarracksWidget;
 
     public void Start()
@@ -28,14 +28,14 @@ public class MapController : MonoBehaviour
                 case "MONASTERY":
                     rootObject = MonasteryWidget;
                     break;
-                case "TOWN_SQUARE":
-                    rootObject = TownSquareWidget;
-                    break;
-                case "TOWN_HALL":
-                    rootObject = TownHallWidget;
+                case "TOWN_MARKET":
+                    rootObject = TownMarketWidget;
                     break;
                 case "TAVERN":
                     rootObject = TavernWidget;
+                    break;
+                case "DUNGEON":
+                    rootObject = DungeonWidget;
                     break;
                 case "BARRACKS":
                     rootObject = BarracksWidget;

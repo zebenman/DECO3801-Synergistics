@@ -20,4 +20,6 @@ public static class SceneInformation
     public const string AGRICULTURAL_BIO = "AgriculturalAdvisorBio";
     public const string TAVERN = "Tavern";
     public const string BARRACKS = "Barracks";
+    public const string INTERMISSION_SCREEN = "IntermissionScreen";
+    public const string SUMMARY_SCREEN = "SummaryScreen";
 }

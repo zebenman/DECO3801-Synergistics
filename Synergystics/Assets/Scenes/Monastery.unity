@@ -319,43 +319,43 @@ PrefabInstance:
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_text
-      value: '[MONASTERY TITLE HERE]'
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 22
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6,
+      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee,
         type: 2}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
@@ -367,6 +367,16 @@ PrefabInstance:
       propertyPath: m_subTextObjects.Array.data[1]
       value: 
       objectReference: {fileID: 1996727426}
+    - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 3873372817673710329, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_IsActive

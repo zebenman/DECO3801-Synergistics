@@ -239,6 +239,11 @@ PrefabInstance:
       propertyPath: MapSource
       value: TOWN_MARKET
       objectReference: {fileID: 0}
+    - target: {fileID: 8211810234556613806, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: StoryTitle
+      value: 
+      objectReference: {fileID: 22876066}
     - target: {fileID: 8211810234556613807, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_Name
@@ -252,6 +257,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 22876064}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &22876066 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
+    type: 3}
+  m_PrefabInstance: {fileID: 22876064}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &441412104
 GameObject:
   m_ObjectHideFlags: 0

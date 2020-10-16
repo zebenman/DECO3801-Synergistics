@@ -16,6 +16,7 @@ public class GenericSelectionSceneController : MonoBehaviour
     public string MapSource;
     public Canvas Canvas;
     public TextMeshProUGUI StoryText;
+    public TextMeshProUGUI StoryTitle;
     public List<AdvisorTextMapper> AdvisorText;
     public Button ConfirmEventButton;
     public TextMeshProUGUI ConfirmEventText;
@@ -38,7 +39,8 @@ public class GenericSelectionSceneController : MonoBehaviour
         if (activeEvent == null) return;
 
         StoryText.text = GameController.Instance.HasSelectedFocus ? activeEvent.OutcomeDescriptor : activeEvent.StoryDescriptor;
-        foreach(AdvisorTextMapper mapper in AdvisorText)
+        StoryTitle.text = activeEvent.StoryTitle;
+        foreach (AdvisorTextMapper mapper in AdvisorText)
         {
             string textValue = null;
             if(GameController.Instance.HasSelectedFocus)

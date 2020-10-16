@@ -317,6 +317,11 @@ PrefabInstance:
       propertyPath: MapSource
       value: DUNGEON
       objectReference: {fileID: 0}
+    - target: {fileID: 8211810234556613806, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: StoryTitle
+      value: 
+      objectReference: {fileID: 570835233}
     - target: {fileID: 8211810234556613807, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_Name
@@ -330,6 +335,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 570835231}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &570835233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3446802897660837913, guid: 684053e19927bc843a1fc788921d8251,
+    type: 3}
+  m_PrefabInstance: {fileID: 570835231}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &602775740
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class EventData
 
     public bool IsValidStory;
 
+    public string StoryTitle;
+
     public string StoryDescriptor;
     public string OutcomeDescriptor;
     public string ShortOutcomeDescriptor;
@@ -58,6 +60,7 @@ public class DataLoader
 
             int eventID = data.GetValue("EventID").ToObject<int>();
             string source = data.GetValue("MapSource").ToObject<string>();
+            string storyTitle = data.GetValue("StoryTitle").ToObject<string>();
             string storyDescription = data.GetValue("StoryDescriptor").ToObject<string>();
             string outcomeDescription = data.GetValue("OutcomeDescriptor").ToObject<string>();
             string shortOutcomeDescription = data.GetValue("ShortOutcomeDescriptor").ToObject<string>();
@@ -74,6 +77,7 @@ public class DataLoader
             {
                 EventID = eventID,
                 MapSource = source,
+                StoryTitle = storyTitle,
                 StoryDescriptor = storyDescription,
                 OutcomeDescriptor = outcomeDescription,
                 ShortOutcomeDescriptor = shortOutcomeDescription,

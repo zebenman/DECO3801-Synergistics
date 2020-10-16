@@ -31,6 +31,9 @@ public class GenericSelectionSceneController : MonoBehaviour
 
     public void Start()
     {
+        if (Canvas == null)
+            Canvas = GetComponent<Canvas>();
+
         EventData activeEvent = GetActiveEvent();
         if (activeEvent == null) return;
 

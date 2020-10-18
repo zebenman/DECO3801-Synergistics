@@ -33,11 +33,17 @@ EditorBuildSettings:
     path: Assets/Scenes/TownMarket.unity
     guid: 131936c53c45ae14b9d5cc160f0b355a
   - enabled: 1
+    path: Assets/Scenes/SummaryScreenNegative.unity
+    guid: 12f00ef269696cf429093b04218d9bbd
+  - enabled: 1
+    path: Assets/Scenes/SummaryScreenPositive.unity
+    guid: 89ee11a50d15246469e81002a8751a1a
+  - enabled: 1
+    path: Assets/Scenes/IntermissionScreen.unity
+    guid: 6b7e1874257c4934e9f22798fa237b42
+  - enabled: 1
     path: Assets/Scenes/AgriculturalAdvisorBio.unity
     guid: b889f609cd634b844951d374a9d3d338
-  - enabled: 1
-    path: Assets/Scenes/SummaryScreen.unity
-    guid: 95d93f00d6af68e4284c798c27e98556
   - enabled: 1
     path: Assets/Scenes/MilitaryCommanderBio.unity
     guid: 9c23937f58f075d4d9a89761a514f443

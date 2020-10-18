@@ -21,6 +21,6 @@ public static class SceneInformation
     public const string TAVERN = "Tavern";
     public const string BARRACKS = "Barracks";
     public const string INTERMISSION_SCREEN = "IntermissionScreen";
-    public const string SUMMARY_SCREEN_POSITIVE = "SummaryScreenPositive";
-    public const string SUMMARY_SCREEN_NEGATIVE = "SummaryScreenNegative";
+    public const string SUMMARY_POSITIVE = "SummaryScreenPositive";
+    public const string SUMMARY_NEGATIVE = "SummaryScreenNegative";
 }

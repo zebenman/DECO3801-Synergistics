@@ -73,11 +73,11 @@ public class CouncilRoomController : MonoBehaviour
         {
             case 0:
             case 2:
-                ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_SCREEN_POSITIVE);
+                ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_POSITIVE);
                 break;
             case 1:
             case 3:
-                ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_SCREEN_NEGATIVE);
+                ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_NEGATIVE);
                 break;
         }
     }

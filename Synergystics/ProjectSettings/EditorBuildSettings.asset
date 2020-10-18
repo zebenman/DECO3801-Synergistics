@@ -66,57 +66,60 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/Tutorial3.unity
     guid: 5789684bbe1c6c041bf8d3deb93f599e
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial4.unity
+    path: Assets/Scenes/Tutorial/Tutorial5.unity
     guid: cfbc0b7c5186eaf43afacbb298eea0d1
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial5.unity
+    path: Assets/Scenes/Tutorial/Tutorial4.unity
     guid: 724941ffab13ea9498a43651a357830a
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial6.unity
     guid: 643506965815deb4988204b7e7f06164
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial7.unity
-    guid: f07bb246363fee84b984c727f1c76cfb
+    guid: 74c8aea5f263ad84ebc92b3a29176297
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial8.unity
-    guid: 461b63555963a1c438102d63a1e2005e
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial9.unity
-    guid: 74c8aea5f263ad84ebc92b3a29176297
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial10.unity
-    guid: c0053bd58f225ad4a8605728578c08d6
-  - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial11.unity
     guid: 5abbe68f71b2f5e49b1eb594d6c05dd6
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial12.unity
+    path: Assets/Scenes/Tutorial/Tutorial9.unity
     guid: aa41e32f6d37b414c8ebb726c8a6ee72
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial13.unity
+    path: Assets/Scenes/Tutorial/Tutorial10.unity
     guid: d26fc82e61af70e4bad20827ea316e55
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial14.unity
+    path: Assets/Scenes/Tutorial/Tutorial11.unity
     guid: a3c1afebed11f8548aca5d119ef78cb9
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial15.unity
+    path: Assets/Scenes/Tutorial/Tutorial12.unity
     guid: 20b75bfaafe867e46a2e00bac759e948
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial16.unity
+    path: Assets/Scenes/Tutorial/Tutorial13.unity
     guid: e2a70b1b9e6b643438a852e0358c3d72
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial17.unity
+    path: Assets/Scenes/Tutorial/Tutorial14.unity
     guid: 832bb5b1bec9de84a816349959c65d5b
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial18.unity
+    path: Assets/Scenes/Tutorial/Tutorial15.unity
     guid: e117fc20183bac54dbda0fd6f7f7ca5f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial/Tutorial19.unity
     guid: c268af6eefe659d43bf56eeb774121e1
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial20.unity
+    path: Assets/Scenes/Tutorial/Tutorial16.unity
     guid: ab7a51a7c68358643909e8374e05eecd
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial21.unity
+    path: Assets/Scenes/Tutorial/Tutorial17.unity
+    guid: 640f1461b6a5ec348b8b4af0f25604cc
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/TutorialEnd.unity
     guid: 7286ca9f1d47ae14785850bb2f686a89
   m_configObjects: {}

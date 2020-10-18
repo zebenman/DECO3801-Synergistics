@@ -65,4 +65,20 @@ public class CouncilRoomController : MonoBehaviour
                 break;
         }
     }
+
+    public void DetermineSummaryOutcome()
+    {
+        EventData active = GameController.Instance.GetFocusedEvents()[0];
+        switch (active.EventID)
+        {
+            case 0:
+            case 2:
+                ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_SCREEN_POSITIVE);
+                break;
+            case 1:
+            case 3:
+                ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_SCREEN_NEGATIVE);
+                break;
+        }
+    }
 }

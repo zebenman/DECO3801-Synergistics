@@ -45,4 +45,22 @@ public static class Utilities
             yield return (i, self.ElementAt(i));
         }
     }
+
+    public static IEnumerable<T> SelectRandom<T>(this IEnumerable<T> self, int count)
+    {
+        if (count <= 0)
+            return null;
+        List<int> indices = new List<int>();
+        count = Mathf.Min(count, self.Count());
+        for(int i = 0; i < count; i++)
+        {
+            int nextValue;
+            do
+            {
+                nextValue = Random.Range(0, self.Count());
+            } while (indices.Contains(nextValue));
+            indices.Add(nextValue);
+        }
+        return indices.Select(x => self.ElementAt(x));
+    }
 }

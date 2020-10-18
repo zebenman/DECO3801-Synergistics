@@ -10,7 +10,7 @@ public class EventData
 {
     public int EventID;
     public string MapSource;
-
+    public MapController.Locations MapLocation { get => Enum.TryParse(MapSource, out MapController.Locations loc) ? loc : MapController.Locations.INVALID_LOCATION; }
     public bool IsValidStory;
 
     public string StoryTitle;

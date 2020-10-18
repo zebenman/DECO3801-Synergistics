@@ -6,6 +6,11 @@ using TMPro;
 
 public class MapController : MonoBehaviour
 {
+    public enum Locations
+    {
+        FARM, MONASTERY, MARKET, TAVERN, DUNGEON, BARRACKS, INVALID_LOCATION
+    }
+
     public Button FarmWidget;
     public Button TownMarketWidget;
     public Button TavernWidget;

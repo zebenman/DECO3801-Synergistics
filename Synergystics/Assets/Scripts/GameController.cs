@@ -51,6 +51,15 @@ public class GameController : MonoBehaviour
     // Internal list of focused events
     private List<EventData> FocusedEvents;
 
+    public EventData LastEvent { get; private set; } = null;
+    public int LastEventOutcome { get; private set; } = -1;
+
+    public void SetLastEventData(EventData last, int outcome)
+    {
+        LastEvent = last;
+        LastEventOutcome = outcome;
+    }
+
     private void SelectPossibleEvents()
     {
         BufferedPossibleEvents = new List<EventData>(DataLoader.GetEvents());

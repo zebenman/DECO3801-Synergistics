@@ -6,7 +6,7 @@ using UnityEngine;
 
 public enum AdvisorType
 {
-    DEFAULT, MILITARY, AGRICULTURAL, SCHOLAR
+    DEFAULT, MILITARY, AGRICULTURAL, SCHOLAR, ECONOMICS, INTELLIGENCE, FOREIGN
 }
 
 public enum AdvisorGender

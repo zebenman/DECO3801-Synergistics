@@ -774,8 +774,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'After selecting your action a major event will impact your kingdom. The
     story focus and action chosen thus far will impact how your Kingdom handles this
-    event. You will be presented with your outcome and a summary of your decisions
-    to learn from moving forward. '
+    event. You will be presented with the outcome of your choices and a summary of
+    your decisions to learn from moving forward. '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -844,10 +844,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1171886742}
-    characterCount: 262
+    characterCount: 277
     spriteCount: 0
-    spaceCount: 45
-    wordCount: 45
+    spaceCount: 48
+    wordCount: 48
     linkCount: 0
     lineCount: 6
     pageCount: 1
@@ -1055,7 +1055,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tutorial20
+          m_StringArgument: Tutorial17
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1521446672

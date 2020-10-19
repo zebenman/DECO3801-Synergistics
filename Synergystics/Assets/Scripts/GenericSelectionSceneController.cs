@@ -24,6 +24,11 @@ public class GenericSelectionSceneController : MonoBehaviour
     public TextMeshProUGUI BackButtonText;
     public ButtonScript ButtonScript;
 
+    public bool advisors1_shown;
+    public bool advisors2_shown;
+    public GameObject AdvisorOpinions1;
+    public GameObject AdvisorOpinions2;
+
     private EventData GetActiveEvent()
     {
         List<EventData> eventSelectionList = GameController.Instance.HasSelectedFocus ? GameController.Instance.GetFocusedEvents() : GameController.Instance.GetPossibleEvents();
@@ -32,6 +37,9 @@ public class GenericSelectionSceneController : MonoBehaviour
 
     public void Start()
     {
+        advisors1_shown = true;
+        advisors2_shown = false;
+
         if (Canvas == null)
             Canvas = transform.parent.GetComponent<Canvas>();
 
@@ -93,5 +101,13 @@ public class GenericSelectionSceneController : MonoBehaviour
             BackButton.onClick.AddListener(new UnityEngine.Events.UnityAction(() => ButtonScript.Btn_change_scene(SceneInformation.THRONE_ROOM)));
             BackButtonText.text = "To Throne Room";
         }
+    }
+
+    public void SwitchUIMode()
+    {
+        advisors1_shown = !advisors1_shown;
+        advisors2_shown = !advisors2_shown;
+        AdvisorOpinions1.SetActive(advisors1_shown);
+        AdvisorOpinions2.SetActive(advisors2_shown);
     }
 }

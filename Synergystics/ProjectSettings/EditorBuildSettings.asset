@@ -51,6 +51,15 @@ EditorBuildSettings:
     path: Assets/Scenes/ScholarBio.unity
     guid: 55544966b746666409bcb8bf91775be5
   - enabled: 1
+    path: Assets/Scenes/EconomicsAdvisorBio.unity
+    guid: 99b311b8fb6bbc543902f779a65fa7e9
+  - enabled: 1
+    path: Assets/Scenes/ForeignAdvisorBio.unity
+    guid: 45f1534d32e57f945b4ccce30f806c39
+  - enabled: 1
+    path: Assets/Scenes/IntelAdvisorBio.unity
+    guid: 43aafdb78e8c3d84c95309c0371e0ff3
+  - enabled: 1
     path: Assets/Scenes/Tavern.unity
     guid: a685b569acb96d14fa531732dae0b4b8
   - enabled: 1
@@ -111,8 +120,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/Tutorial15.unity
     guid: e117fc20183bac54dbda0fd6f7f7ca5f
   - enabled: 0
-    path: Assets/Scenes/Tutorial/Tutorial19.unity
-    guid: c268af6eefe659d43bf56eeb774121e1
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Tutorial/Tutorial16.unity
     guid: ab7a51a7c68358643909e8374e05eecd

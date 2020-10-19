@@ -65,6 +65,15 @@ public class CouncilRoomController : MonoBehaviour
             case AdvisorType.AGRICULTURAL:
                 ButtonScript.Btn_change_scene(SceneInformation.AGRICULTURAL_BIO);
                 break;
+			case AdvisorType.ECONOMICS:
+                ButtonScript.Btn_change_scene(SceneInformation.ECONOMICS_BIO);
+                break;
+			case AdvisorType.INTELLIGENCE:
+                ButtonScript.Btn_change_scene(SceneInformation.INTEL_BIO);
+                break;
+			case AdvisorType.FOREIGN:
+                ButtonScript.Btn_change_scene(SceneInformation.FOREIGN_BIO);
+                break;
         }
     }
 

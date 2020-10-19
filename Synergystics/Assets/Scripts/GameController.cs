@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -23,6 +24,13 @@ public class GameController : MonoBehaviour
 
     // Config file that reads/writes config information
     public readonly GameConfig GameConfig = GameConfig.LoadFrom("Resources\\config.json", true);
+
+    // Story manager
+    public StoryManager StoryManager { get; private set; }
+
+    [HideInInspector]
+    [NonSerialized]
+    public StoryManager.StoryThread ActiveThread = null;
 
     // Flag describing if the user has selected a focus (hidden from Unity inspector)
     [HideInInspector]
@@ -62,7 +70,9 @@ public class GameController : MonoBehaviour
 
     private void SelectPossibleEvents()
     {
-        BufferedPossibleEvents = new List<EventData>(DataLoader.GetEvents());
+        ActiveThread = StoryManager.GetNextThread();
+        BufferedPossibleEvents = ActiveThread.GetAllEvents();
+        //BufferedPossibleEvents = new List<EventData>(DataLoader.GetEvents());
     }
 
     public List<EventData> GetPossibleEvents()
@@ -125,10 +135,35 @@ public class GameController : MonoBehaviour
 
         // Set singleton instance
         Instance = this;
+
+        StoryManager = new StoryManager();
     }
 
-    public void OnSceneTransition(string scene)
+    public void OnSceneTransition(string to, string from)
     {
-        // TODO?
+        if(to.Equals(SceneInformation.MAIN_MENU))
+        {
+            Instance = null;
+            Destroy(gameObject);
+        }
+
+        if (from.Equals(SceneInformation.INTERMISSION_SCREEN))
+        {
+            HasSelectedFocus = false;
+            LastSelectedOption = -1;
+            LastSelectedEvent = null;
+            LastEvent = null;
+            LastEventOutcome = -1;
+            BufferedPossibleEvents = null;
+            FocusedEvents = null;
+
+            if (StoryManager.PeekNextThread() == null)
+            {
+                SceneManager.LoadSceneAsync(SceneInformation.MAIN_MENU).completed += (a) =>
+                {
+                    OnSceneTransition(SceneInformation.MAIN_MENU, to);
+                };
+            }
+        }
     }
 }

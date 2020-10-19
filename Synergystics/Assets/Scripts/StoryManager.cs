@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 public class StoryManager
 {
     public class StoryThread
     {
-        private static List<EventData> ReadEvents = new List<EventData>();
+        internal static List<EventData> ReadEvents = new List<EventData>();
 
         public int RealStoryCount { get; private set; } = 0;
         public int FillerCount { get; private set; } = 0;
@@ -36,6 +37,15 @@ public class StoryManager
             AllEvents = validEvents;
             FillerCount = fillerCount;
             ReadEvents.AddRange(validEvents);
+        }
+
+        public StoryThread(List<EventData> invalidEvents, List<EventData> validEvents)
+        {
+            AllEvents = new List<EventData>();
+            AllEvents.AddRange(invalidEvents);
+            AllEvents.AddRange(validEvents);
+            ReadEvents.AddRange(AllEvents);
+            IsInitialized = true;            
         }
 
         private void Initialize()
@@ -78,5 +88,29 @@ public class StoryManager
             Initialize();
             return AllEvents.Where(x => !x.IsValidStory).ToList();
         }
+    }
+
+    private Queue<StoryThread> StoryThreads = new Queue<StoryThread>();
+
+    public StoryManager()
+    {
+        List<EventData> allEvents = GameController.Instance.DataLoader.GetEvents();
+
+        StoryThread chapter0 = new StoryThread(allEvents.Where(x => !x.IsValidStory && x.StoryTitle.Equals("Missing Sheep")).ToList(), allEvents.Where(x => x.IsValidStory && x.StoryTitle.Equals("Plague")).ToList());
+        allEvents = allEvents.Where(x => !StoryThread.ReadEvents.Contains(x)).ToList();
+        StoryThread chapter1 = new StoryThread(allEvents.Where(x => !x.IsValidStory).ToList(), allEvents.Where(x => x.IsValidStory).ToList());
+
+        StoryThreads.Enqueue(chapter0);
+        StoryThreads.Enqueue(chapter1);
+    }
+
+    public StoryThread GetNextThread()
+    {
+        return StoryThreads.Count == 0 ? null : StoryThreads.Dequeue();
+    }  
+
+    public StoryThread PeekNextThread()
+    {        
+        return StoryThreads.Count == 0 ? null : StoryThreads.Peek();
     }
 }

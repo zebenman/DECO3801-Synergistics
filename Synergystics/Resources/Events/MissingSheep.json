@@ -2,7 +2,7 @@
     "EventID": 1,
     "MapSource": "FARM",
     "IsValidStory": false,
-	"StoryTitle": "Missing Sheep",
+	  "StoryTitle": "Missing Sheep",
     "StoryDescriptor": "Many sheep have gone missing over the last few days and some farmers suspect they've been stolen. Sheep are an important livestock and make up over 10% of the kingdoms food sources.",
     "OutcomeDescriptor": "A scuffle has broken out into a small-scale war, farmers from across the kingdom have begun fighting each other because they believe the others have stolen their sheep. Many peasants are so worried they refuse to leave their homes.",
     "ShortOutcomeDescriptor": "A scuffle has broken out into a small-scale war, farmers from across the kingdom have begun fighting each other",

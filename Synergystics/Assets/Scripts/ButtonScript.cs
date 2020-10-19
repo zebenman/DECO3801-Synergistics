@@ -8,10 +8,11 @@ public class ButtonScript : MonoBehaviour
 {
     // Load a given scene
     public void Btn_change_scene(string scene_name)
-    {       
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadSceneAsync(scene_name).completed += (a) =>
-        {                        
-            GameController.Instance.OnSceneTransition(scene_name);
+        {
+            GameController.Instance.OnSceneTransition(scene_name, currentScene);
         };
     }
 }

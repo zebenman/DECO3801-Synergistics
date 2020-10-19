@@ -30,9 +30,10 @@ public class AdvisorBioController : MonoBehaviour
 
     public void ReturnToCouncil()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadSceneAsync("CouncilRoom").completed += (a) =>
         {
-            GameController.Instance.OnSceneTransition("CouncilRoom");
+            GameController.Instance.OnSceneTransition("CouncilRoom", currentScene);
             FindObjectOfType<CouncilRoomController>().SwitchUIMode();
         };
     }

@@ -5171,16 +5171,32 @@ MonoBehaviour:
   StoryTitle: {fileID: 0}
   AdvisorText:
   - AdvisorType: 2
-    Text: {fileID: 8211810232614247400}
+    OpinionText: {fileID: 8211810232614247400}
+    NameText: {fileID: 3406516223359811896}
   - AdvisorType: 3
-    Text: {fileID: 8211810234494933504}
+    OpinionText: {fileID: 8211810234494933504}
+    NameText: {fileID: 2771520398803769037}
   - AdvisorType: 1
-    Text: {fileID: 8211810234219358399}
+    OpinionText: {fileID: 8211810234219358399}
+    NameText: {fileID: 4345632005454814815}
+  - AdvisorType: 4
+    OpinionText: {fileID: 5053783113995626000}
+    NameText: {fileID: 3819205503414635077}
+  - AdvisorType: 5
+    OpinionText: {fileID: 7433091910417267635}
+    NameText: {fileID: 7709441672950283029}
+  - AdvisorType: 6
+    OpinionText: {fileID: 6377463052909501623}
+    NameText: {fileID: 3615576921667969662}
   ConfirmEventButton: {fileID: 8211810233338568898}
   ConfirmEventText: {fileID: 8211810232929192338}
   BackButton: {fileID: 8211810234027002933}
   BackButtonText: {fileID: 8211810232829067380}
   ButtonScript: {fileID: 6086883531390771993}
+  advisors1_shown: 0
+  advisors2_shown: 0
+  AdvisorOpinions1: {fileID: 0}
+  AdvisorOpinions2: {fileID: 0}
 --- !u!114 &6086883531390771993
 MonoBehaviour:
   m_ObjectHideFlags: 0

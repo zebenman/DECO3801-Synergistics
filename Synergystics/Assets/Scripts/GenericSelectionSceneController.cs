@@ -10,7 +10,8 @@ public class GenericSelectionSceneController : MonoBehaviour
     public class AdvisorTextMapper
     {
         public AdvisorType AdvisorType;
-        public TextMeshProUGUI Text;
+        public TextMeshProUGUI OpinionText;
+        public Text NameText;
     }
 
     public string MapSource;
@@ -58,7 +59,8 @@ public class GenericSelectionSceneController : MonoBehaviour
             {
                 textValue = activeEvent.PreSelectionOpinions.Find(x => x.AdvisorType == mapper.AdvisorType).Opinion;
             }
-            mapper.Text.text = textValue;
+            mapper.OpinionText.text = textValue;
+            mapper.NameText.text = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == mapper.AdvisorType).GetAdvisorName();
         }
 
         if (GameController.Instance.GetFocusedEvents().Contains(GetActiveEvent()))

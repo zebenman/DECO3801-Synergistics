@@ -1,0 +1,13 @@
+{
+  "EventID": 2,
+  "MapSource": "TOWN_MARKET",
+  "StoryTitle": "Popularity Contest",
+  "IsValidStory": false,
+  "StoryDescriptor": "A poll was conducted by a private group in the South Region of the Kingdom at one of the busiest market places. Of those who were able to take the survery, almost 80% rated the King equal to or worse than the previous King.",
+  "OutcomeDescriptor": "There was no proof to this claim but your focus on the issue HAS caused your ratings to drop.",
+  "ShortOutcomeDescriptor": "Please insert this field",
+  "PreSelectionPrefix": "PFP",
+  "SolutionOpinionPrefix": "POF",
+  "EventSolutionPrefix": "SOP",
+  "DataFolder": "PopularityContest_data"
+}

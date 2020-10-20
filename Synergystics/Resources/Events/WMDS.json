@@ -1,0 +1,13 @@
+{
+  "EventID": 5,
+  "MapSource": "DUNGEON",
+  "StoryTitle": "WMDs",
+  "IsValidStory": false,
+  "StoryDescriptor": "The discover of a hidden weapons facility in a neighbouring kindom brings shocking news to the world. No-one knows where or what is in the facility but after attempting to reach out to the kingdom's military commander for comment, his silence says everything.",
+  "OutcomeDescriptor": "There is no evidence to support or refute this claim.",
+  "ShortOutcomeDescriptor": "Please insert this field",
+  "PreSelectionPrefix": "PFP",
+  "SolutionOpinionPrefix": "POF",
+  "EventSolutionPrefix": "SOP",
+  "DataFolder": "WMDS_data"
+}

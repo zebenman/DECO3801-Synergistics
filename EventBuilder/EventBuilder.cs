@@ -119,8 +119,8 @@ namespace EventBuilder
                     SolutionOpinions = new string[] { subset.Action1Opinion, subset.Action2Opinion, subset.Action3Opinion, subset.Action4Opinion }
                 };
 
-                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.PreSelectionPrefix}_{subset.AdvisorType[0]}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(preTemplate, Formatting.Indented));
-                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.SolutionOpinionPrefix}_{subset.AdvisorType[0]}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(afterTemplate, Formatting.Indented));
+                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.PreSelectionPrefix}_{subset.AdvisorType}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(preTemplate, Formatting.Indented));
+                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.SolutionOpinionPrefix}_{subset.AdvisorType}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(afterTemplate, Formatting.Indented));
             }
 
             EventSolutionTemplate[] solutions = new EventSolutionTemplate[]

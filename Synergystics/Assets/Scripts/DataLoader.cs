@@ -99,7 +99,12 @@ public class DataLoader
         {
             JObject data = JObject.Parse(File.ReadAllText(path));
 
-            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), data.GetValue("AdvisorType").ToObject<string>(), true);
+            string advisorTypeString = data.GetValue("AdvisorType").ToObject<string>();
+            if(advisorTypeString.Equals("AGRICULTURE", StringComparison.OrdinalIgnoreCase))
+            {
+                advisorTypeString = "AGRICULTURAL";
+            }
+            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), advisorTypeString, true);
             string opinion = data.GetValue("Opinion").ToObject<string>();
 
             AdvisorPreSelectionOpinion apso = new AdvisorPreSelectionOpinion()
@@ -122,7 +127,12 @@ public class DataLoader
         {
             JObject data = JObject.Parse(File.ReadAllText(path));
 
-            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), data.GetValue("AdvisorType").ToObject<string>(), true);
+            string advisorTypeString = data.GetValue("AdvisorType").ToObject<string>();
+            if (advisorTypeString.Equals("AGRICULTURE", StringComparison.OrdinalIgnoreCase))
+            {
+                advisorTypeString = "AGRICULTURAL";
+            }
+            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), advisorTypeString, true);
             List<string> opinions = data.GetValue("SolutionOpinions").ToObject<List<string>>();
 
             foreach((int index, string opinion) in opinions.IndexedForeach())

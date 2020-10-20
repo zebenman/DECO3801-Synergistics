@@ -1,0 +1,13 @@
+{
+  "EventID": 4,
+  "MapSource": "MONASTERY",
+  "StoryTitle": "Was Is Coming",
+  "IsValidStory": true,
+  "StoryDescriptor": "Multiple reports from kingom scouts have reported an unusual amount of military activity in a neighbouring country. Numbers show has many as 5,000 young men have returned from other duties and missions by command of their king. An increase in smoke in the area, scientists believe to be linked to an increase in blacksmithing.",
+  "OutcomeDescriptor": "The reports are confirmed. The neighbouring kingom is amassing troops and it appears a war is coming.",
+  "ShortOutcomeDescriptor": "Please insert this field",
+  "PreSelectionPrefix": "PFP",
+  "SolutionOpinionPrefix": "POF",
+  "EventSolutionPrefix": "SOP",
+  "DataFolder": "WarIsComing_data"
+}

@@ -1,13 +1,13 @@
 {
-    "EventID": 2,
-    "MapSource": "MONASTERY",
-    "IsValidStory": true,
-	"StoryTitle": "Tax Evasion",
-    "StoryDescriptor": "Famous military commander, George the Great, has reportedly not paid any taxes since he entered the military. While many in the kingdom regard him very highly, those in the tax office estimate his back-taxes could feed the kingdom for half a year.",
-    "OutcomeDescriptor": "When confronted, the commander confessed to evading income tax. His arrest made quite a scene and many townsfolk are now divided on this issue, some claiming that he deserves to keep all of his income because of the deeds he has done for the kingdom, others claim he should be held to the same standard as everyone else.",
-    "ShortOutcomeDescriptor": "Townsfolk are divided, some believe he should be treated like everyone else, others believe he has done enough for the kingdom to keep all of his income",
-    "PreSelectionPrefix": "PSO",
-    "SolutionOpinionPrefix": "ASO",
-    "EventSolutionPrefix": "EVS",
-    "DataFolder": "TaxEvasion_Data"
+  "EventID": 3,
+  "StoryTitle": "Tax Evasion",
+  "MapSource": "BARRACKS",
+  "IsValidStory": true,
+  "StoryDescriptor": "Military commander, George the Great, has reportedably not paid any taxes since his entry into the military ranks.  While many may know him for his win in the Battle of Greenfield, those from the tax office know him for his over 15 years of tax fraud. Reports from the office say he owes enough to feed the half the Kingdom for a year.",
+  "OutcomeDescriptor": "This is proven to be true. And there is unrest between the military and the townsfolk.",
+  "ShortOutcomeDescriptor": "Please insert this field",
+  "PreSelectionPrefix": "PFP",
+  "SolutionOpinionPrefix": "POF",
+  "EventSolutionPrefix": "SOP",
+  "DataFolder": "TaxEvasion_data"
 }

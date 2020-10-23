@@ -1690,7 +1690,7 @@ PrefabInstance:
     - target: {fileID: 8912019109154599943, guid: 36effa7676ae89d44aa9f13298a14d4f,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8912019109154599943, guid: 36effa7676ae89d44aa9f13298a14d4f,
         type: 3}
@@ -1710,7 +1710,7 @@ PrefabInstance:
     - target: {fileID: 8912019109154599943, guid: 36effa7676ae89d44aa9f13298a14d4f,
         type: 3}
       propertyPath: m_text
-      value: '[name]'
+      value: Sarah
       objectReference: {fileID: 0}
     - target: {fileID: 8912019109154599943, guid: 36effa7676ae89d44aa9f13298a14d4f,
         type: 3}

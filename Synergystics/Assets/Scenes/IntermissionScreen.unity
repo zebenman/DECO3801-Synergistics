@@ -982,7 +982,6 @@ MonoBehaviour:
     are recovering well from it. Morale has been rising as people as slowly rebuilding.
 
 
-
     However,
     new stories have arisen and requires your immediate attention. Head out to the
     various location and seek out information about these new stories and return
@@ -1014,7 +1013,7 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 39.65
+  m_fontSize: 39.45
   m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1052,15 +1051,15 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 22.384363, z: 0, w: 28.77988}
   m_textInfo:
     textComponent: {fileID: 1459612447}
-    characterCount: 382
+    characterCount: 381
     spriteCount: 0
-    spaceCount: 67
+    spaceCount: 66
     wordCount: 66
     linkCount: 0
-    lineCount: 10
+    lineCount: 8
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

@@ -1,10 +1,10 @@
 {
   "EventID": 0,
   "MapSource": "FARM",
-  "StoryTitle": "Missing Sheep",
   "IsValidStory": false,
   "StoryDescriptor": "In the kingdom over the past few weeks, over 2 sheep have been stolen according to one farmer. Sheep are an important livestock in the kingom accounting for over 80% of the kingoms food source.",
   "OutcomeDescriptor": "A war has started between the farmers on the East and West of the Kingdom, with both sides accusing the other of stealing all of their sheep. Things are starting to get violent and the villagers are frightened to go outside.",
+  "StoryTitle": "MissingSheep",
   "ShortOutcomeDescriptor": "Please insert this field",
   "PreSelectionPrefix": "PFP",
   "SolutionOpinionPrefix": "POF",

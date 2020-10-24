@@ -42,6 +42,7 @@ namespace EventBuilder
         public bool IsValidStory;
         public string StoryDescriptor;
         public string OutcomeDescriptor;
+        public string StoryTitle;
         public string ShortOutcomeDescriptor = "Please insert this field";
 
         public string PreSelectionPrefix;
@@ -88,10 +89,14 @@ namespace EventBuilder
 
             StoryData data = GetStoryData(inputFileLocation);
 
+            int existingFiles = Directory.GetFiles($"{resourceFolderLocation}\\", "*.json").Length;
+            Console.WriteLine($"Found {existingFiles} files...");
+
             TopLevelTemplate topLevelTemplate = new TopLevelTemplate()
             {
                 DataFolder = $"{eventName}_data",
-                EventID = 0,
+                EventID = existingFiles,
+                StoryTitle = eventName,
                 EventSolutionPrefix = solutionPrefix,
                 IsValidStory = data.IsValidStory,
                 MapSource = data.MapSource,

@@ -1,10 +1,10 @@
 {
   "EventID": 1,
   "MapSource": "TAVERN",
-  "StoryTitle": "Plague",
   "IsValidStory": true,
   "StoryDescriptor": "Urgent news by raven was received earlier today by our herald spying in the Kingdom three days over of a disease that  they have never seen before. This comes just a day after report from another Kingdom four days over of the same mysterious symptoms. At this time there have been no reports of a cure.",
   "OutcomeDescriptor": "You investigate further and it is true. You have caught it early and have managed to keep it out of your kingdom... for now.",
+  "StoryTitle": "Plague",
   "ShortOutcomeDescriptor": "Please insert this field",
   "PreSelectionPrefix": "PFP",
   "SolutionOpinionPrefix": "POF",

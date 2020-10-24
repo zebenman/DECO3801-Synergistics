@@ -123,6 +123,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/Tutorial17.unity
     guid: 640f1461b6a5ec348b8b4af0f25604cc
   - enabled: 1
-    path: Assets/Scenes/Tutorial/TutorialEnd.unity
+    path: Assets/Scenes/Tutorial/Tutorial18.unity
     guid: 7286ca9f1d47ae14785850bb2f686a89
   m_configObjects: {}

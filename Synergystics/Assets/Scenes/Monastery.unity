@@ -417,6 +417,36 @@ PrefabInstance:
       propertyPath: m_textInfo.lineCount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701916786, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_fontSizeMax
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701916786, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_margin.z
+      value: 30.374817
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701916786, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_margin.x
+      value: 27.81633
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701916786, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_margin.w
+      value: 25.085678
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701916786, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_fontSizeMin
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211810232701916786, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8211810233212399477, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_Sprite

@@ -96,7 +96,7 @@ public class StoryManager
     {
         List<EventData> allEvents = GameController.Instance.DataLoader.GetEvents();
 
-        StoryThread chapter0 = new StoryThread(allEvents.Where(x => !x.IsValidStory && x.StoryTitle.Equals("Missing Sheep")).ToList(), allEvents.Where(x => x.IsValidStory && x.StoryTitle.Equals("Plague")).ToList());
+        StoryThread chapter0 = new StoryThread(allEvents.Where(x => !x.IsValidStory && x.StoryTitle.Equals("MissingSheep")).ToList(), allEvents.Where(x => x.IsValidStory && x.StoryTitle.Equals("Plague")).ToList());
         allEvents = allEvents.Where(x => !StoryThread.ReadEvents.Contains(x)).ToList();
         StoryThread chapter1 = new StoryThread(allEvents.Where(x => !x.IsValidStory).ToList(), allEvents.Where(x => x.IsValidStory).ToList());
 

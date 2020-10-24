@@ -26,4 +26,6 @@ public static class SceneInformation
     public const string INTERMISSION_SCREEN = "IntermissionScreen";
     public const string SUMMARY_POSITIVE = "SummaryScreenPositive";
     public const string SUMMARY_NEGATIVE = "SummaryScreenNegative";
+    public const string FINAL_SUMMARY = "FinalSummaryScreen";
+    public const string END_SCREEN = "EndScreen";
 }

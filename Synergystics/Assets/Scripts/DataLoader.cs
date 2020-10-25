@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 public class EventData
 {
     public int EventID;
+    public string EventName;
     public string MapSource;
     public MapController.Locations MapLocation { get => Enum.TryParse(MapSource, out MapController.Locations loc) ? loc : MapController.Locations.INVALID_LOCATION; }
     public bool IsValidStory;
@@ -59,6 +60,7 @@ public class DataLoader
             JObject data = JObject.Parse(File.ReadAllText(path));
 
             int eventID = data.GetValue("EventID").ToObject<int>();
+            string eventName = data.GetValue("EventName").ToObject<string>();
             string source = data.GetValue("MapSource").ToObject<string>();
             string storyTitle = data.GetValue("StoryTitle").ToObject<string>();
             string storyDescription = data.GetValue("StoryDescriptor").ToObject<string>();
@@ -76,6 +78,7 @@ public class DataLoader
             EventData eventData = new EventData()
             {
                 EventID = eventID,
+                EventName = eventName,
                 MapSource = source,
                 StoryTitle = storyTitle,
                 StoryDescriptor = storyDescription,

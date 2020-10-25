@@ -22,6 +22,7 @@ namespace EventBuilder
 
     public class StoryData
     {
+        public string StoryTitle;
         public string StoryDescriptor;
         public bool IsValidStory;
         public string FocusOutcome;
@@ -38,12 +39,13 @@ namespace EventBuilder
     public class TopLevelTemplate
     {
         public int EventID;
+        public string EventName;
         public string MapSource;
         public bool IsValidStory;
         public string StoryDescriptor;
         public string OutcomeDescriptor;
         public string StoryTitle;
-        public string ShortOutcomeDescriptor = "Please insert this field";
+        public string ShortOutcomeDescriptor;
 
         public string PreSelectionPrefix;
         public string SolutionOpinionPrefix;
@@ -96,13 +98,14 @@ namespace EventBuilder
             {
                 DataFolder = $"{eventName}_data",
                 EventID = existingFiles,
-                StoryTitle = eventName,
+                EventName = eventName,
+                StoryTitle = data.StoryTitle,
                 EventSolutionPrefix = solutionPrefix,
                 IsValidStory = data.IsValidStory,
                 MapSource = data.MapSource,
                 OutcomeDescriptor = data.FocusOutcome,
                 PreSelectionPrefix = preFocusPrefix,
-                ShortOutcomeDescriptor = "Please insert this field",
+                ShortOutcomeDescriptor = data.FocusOutcome,
                 SolutionOpinionPrefix = postFocusPrefix,
                 StoryDescriptor = data.StoryDescriptor
             };
@@ -208,6 +211,7 @@ namespace EventBuilder
                     subset.Action4Opinion = storySheet.Cells[14, subset.SubtypeCol].Text;
                 }
 
+                data.StoryTitle = storySheet.Cells[3, 2].Text;
                 data.StoryDescriptor = storySheet.Cells[4, 2].Text;
                 data.FocusOutcome = storySheet.Cells[6, 2].Text;
                 data.IsValidStory = storySheet.Cells[4, 1].GetValue<bool>();

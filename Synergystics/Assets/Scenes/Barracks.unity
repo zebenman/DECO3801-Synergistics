@@ -345,6 +345,11 @@ PrefabInstance:
       propertyPath: AdvisorOpinions2
       value: 
       objectReference: {fileID: 1714068981}
+    - target: {fileID: 8211810234556613806, guid: 684053e19927bc843a1fc788921d8251,
+        type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8211810234556613807, guid: 684053e19927bc843a1fc788921d8251,
         type: 3}
       propertyPath: m_Name

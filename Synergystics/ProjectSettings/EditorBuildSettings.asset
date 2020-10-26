@@ -48,11 +48,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SummaryScreenPositive.unity
     guid: 89ee11a50d15246469e81002a8751a1a
   - enabled: 1
-    path: Assets/Scenes/FinalSummaryScreen.unity
-    guid: 779e514a0e68ca04b9f3f730e5b7f84a
-  - enabled: 1
     path: Assets/Scenes/IntermissionScreen.unity
     guid: 6b7e1874257c4934e9f22798fa237b42
+  - enabled: 1
+    path: Assets/Scenes/FinalSummaryScreen.unity
+    guid: 779e514a0e68ca04b9f3f730e5b7f84a
   - enabled: 1
     path: Assets/Scenes/EndScreen.unity
     guid: fb978312a85900c4890743fc73669113

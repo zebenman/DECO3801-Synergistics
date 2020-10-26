@@ -5,6 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 
+// Lots of work for not much :(
+// This class is no longer in use, but feel free to look around
+[Obsolete]
 public class DialogueLoader
 {
     // A containing class for possible dialogue variants
@@ -26,8 +29,7 @@ public class DialogueLoader
     // A container for trait matching dialogue
     public class DialogueOptionContainer
     {
-        // Trait weightings for the variant (if empty, assume traits are irrelevant)
-        public Advisor.AdvisorTraits TraitWeightings;
+        public AdvisorTrait RequiredTrait;
 
         // A set of required flags for this option to be considered (as an option to select)
         // Explicitly used to determine if the DIALOGUE OPTION can be considered (not the response)
@@ -56,14 +58,7 @@ public class DialogueLoader
                 return false;
             }
 
-            // If this has empty weightings, it is the 'default' option
-            if(TraitWeightings.Empty())
-            {
-                return true;
-            }
-
-            // TODO
-            return true;
+            return advisor.GetTrait() == RequiredTrait;
         }
     }
 
@@ -144,7 +139,7 @@ public class DialogueLoader
             Variant = question,
             BackgroundFlags = new HashSet<string>(),
             RequiredFlags = requiredFlags,
-            TraitWeightings = Advisor.AdvisorTraits.MapFrom(traitWeightings),
+            //TraitWeightings = Advisor.AdvisorTraits.MapFrom(traitWeightings),
             AdditionalData = additionalData
         };
 
@@ -154,7 +149,7 @@ public class DialogueLoader
             Variant = response,
             BackgroundFlags = backgroundFlags,
             RequiredFlags = new HashSet<string>(),
-            TraitWeightings = Advisor.AdvisorTraits.MapFrom(traitWeightings),
+            //TraitWeightings = Advisor.AdvisorTraits.MapFrom(traitWeightings),
             AdditionalData = additionalData
         };
 
@@ -223,7 +218,7 @@ public class DialogueLoader
         } else
         {
             // If there are multiple selections (i.e. a default & at least one other legitimate trait match), return the trait match
-            IEnumerable<DialogueOptionContainer> traitMatchContainers = finalSelection.Where(x => !x.TraitWeightings.Empty());
+            IEnumerable<DialogueOptionContainer> traitMatchContainers = finalSelection.Where(x => /*!x.TraitWeightings.Empty()*/ true);
             
             if(traitMatchContainers.Count() == 0)
             {

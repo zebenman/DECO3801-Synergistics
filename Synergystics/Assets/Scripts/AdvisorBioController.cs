@@ -32,6 +32,12 @@ public class AdvisorBioController : MonoBehaviour
             ActionDescriptorText[i].text = active.EventSolutions.Find(x => x.SolutionIndex == i).ActionDescription;
             ActionOpinionText[i].text = active.SolutionOpinions.Where(x => x.SolutionIndex == i).ToList().Find(x => x.AdvisorType == AdvisorType).Opinion;
         }
+
+        Advisor data = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == AdvisorType);
+        AdvisorName.text = data.GetAdvisorName();
+        AdvisorTypeText.text = data.GetAdvisorTypeFancy();
+        AdvisorTrait.text = data.GetTraitFancy();
+        AdvisorImage.sprite = data.AdvisorSprite;
     }
 
     public void ReturnToCouncil()

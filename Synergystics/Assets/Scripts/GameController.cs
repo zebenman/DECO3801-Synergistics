@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public List<AdvisorPicture> AdvisorPictures;
+
     // Controller singleton instance
     public static GameController Instance { get; private set; }
     
@@ -22,8 +24,8 @@ public class GameController : MonoBehaviour
 
     public readonly DataLoader DataLoader = new DataLoader("Resources\\Events");
 
-    // Config file that reads/writes config information
-    public readonly GameConfig GameConfig = GameConfig.LoadFrom("Resources\\config.json", true);
+    // Advisor data generator
+    public AdvisorDataGenerator AdvisorGenerator { get; private set; }
 
     // Story manager
     public StoryManager StoryManager { get; private set; }
@@ -137,6 +139,7 @@ public class GameController : MonoBehaviour
         Instance = this;
 
         StoryManager = new StoryManager("Resources\\StoryConfig.json");
+        AdvisorGenerator = new AdvisorDataGenerator("Resources\\MaleNames.txt", "Resources\\FemaleNames.txt", AdvisorPictures);
     }
 
     public void OnSceneTransition(string to, string from)

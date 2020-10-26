@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -57,10 +58,31 @@ public static class Utilities
             int nextValue;
             do
             {
-                nextValue = Random.Range(0, self.Count());
+                nextValue = UnityEngine.Random.Range(0, self.Count());
             } while (indices.Contains(nextValue));
             indices.Add(nextValue);
         }
         return indices.Select(x => self.ElementAt(x));
+    }
+
+    public static (AdvisorTrait a, AdvisorTrait b) GetTraitByType(this AdvisorType type)
+    {
+        switch(type)
+        {
+            case AdvisorType.MILITARY:
+                return (AdvisorTrait.DIPLOMATIC, AdvisorTrait.WAR_MONGERING);
+            case AdvisorType.SCHOLAR:
+                return (AdvisorTrait.PRESTIGIOUS, AdvisorTrait.CONNIVING);
+            case AdvisorType.AGRICULTURAL:
+                return (AdvisorTrait.GREEDY, AdvisorTrait.DOWN_TO_EARTH);
+            case AdvisorType.ECONOMICS:
+                return (AdvisorTrait.PERCEPTIVE, AdvisorTrait.SENSIBLE);
+            case AdvisorType.INTELLIGENCE:
+                return (AdvisorTrait.CONSCIENTIOUS, AdvisorTrait.GULLIBLE);
+            case AdvisorType.FOREIGN:
+                return (AdvisorTrait.SUBTLE, AdvisorTrait.UPFRONT);                
+        }
+
+        throw new ArgumentException("Illegal advisor type");
     }
 }

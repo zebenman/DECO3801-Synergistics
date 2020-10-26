@@ -12,6 +12,7 @@ public class GenericSelectionSceneController : MonoBehaviour
         public AdvisorType AdvisorType;
         public TextMeshProUGUI OpinionText;
         public Text NameText;
+        public Image AdvisorImage;
     }
 
     public string MapSource;
@@ -61,6 +62,7 @@ public class GenericSelectionSceneController : MonoBehaviour
             }
             mapper.OpinionText.text = textValue;
             mapper.NameText.text = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == mapper.AdvisorType).GetAdvisorName();
+            mapper.AdvisorImage.sprite = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == mapper.AdvisorType).AdvisorSprite;
         }
 
         if (GameController.Instance.GetFocusedEvents().Contains(GetActiveEvent()))

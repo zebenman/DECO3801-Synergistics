@@ -10,18 +10,26 @@ public class GenericSelectionSceneController : MonoBehaviour
     public class AdvisorTextMapper
     {
         public AdvisorType AdvisorType;
-        public TextMeshProUGUI Text;
+        public TextMeshProUGUI OpinionText;
+        public Text NameText;
+        public Image AdvisorImage;
     }
 
     public string MapSource;
     public Canvas Canvas;
     public TextMeshProUGUI StoryText;
+    public TextMeshProUGUI StoryTitle;
     public List<AdvisorTextMapper> AdvisorText;
     public Button ConfirmEventButton;
     public TextMeshProUGUI ConfirmEventText;
     public Button BackButton;
     public TextMeshProUGUI BackButtonText;
     public ButtonScript ButtonScript;
+
+    public bool advisors1_shown;
+    public bool advisors2_shown;
+    public GameObject AdvisorOpinions1;
+    public GameObject AdvisorOpinions2;
 
     private EventData GetActiveEvent()
     {
@@ -31,11 +39,18 @@ public class GenericSelectionSceneController : MonoBehaviour
 
     public void Start()
     {
+        advisors1_shown = true;
+        advisors2_shown = false;
+
+        if (Canvas == null)
+            Canvas = transform.parent.GetComponent<Canvas>();
+
         EventData activeEvent = GetActiveEvent();
         if (activeEvent == null) return;
 
         StoryText.text = GameController.Instance.HasSelectedFocus ? activeEvent.OutcomeDescriptor : activeEvent.StoryDescriptor;
-        foreach(AdvisorTextMapper mapper in AdvisorText)
+        StoryTitle.text = activeEvent.StoryTitle;
+        foreach (AdvisorTextMapper mapper in AdvisorText)
         {
             string textValue = null;
             if(GameController.Instance.HasSelectedFocus)
@@ -45,7 +60,9 @@ public class GenericSelectionSceneController : MonoBehaviour
             {
                 textValue = activeEvent.PreSelectionOpinions.Find(x => x.AdvisorType == mapper.AdvisorType).Opinion;
             }
-            mapper.Text.text = textValue;
+            mapper.OpinionText.text = textValue;
+            mapper.NameText.text = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == mapper.AdvisorType).GetAdvisorName();
+            mapper.AdvisorImage.sprite = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == mapper.AdvisorType).AdvisorSprite;
         }
 
         if (GameController.Instance.GetFocusedEvents().Contains(GetActiveEvent()))
@@ -88,5 +105,13 @@ public class GenericSelectionSceneController : MonoBehaviour
             BackButton.onClick.AddListener(new UnityEngine.Events.UnityAction(() => ButtonScript.Btn_change_scene(SceneInformation.THRONE_ROOM)));
             BackButtonText.text = "To Throne Room";
         }
+    }
+
+    public void SwitchUIMode()
+    {
+        advisors1_shown = !advisors1_shown;
+        advisors2_shown = !advisors2_shown;
+        AdvisorOpinions1.SetActive(advisors1_shown);
+        AdvisorOpinions2.SetActive(advisors2_shown);
     }
 }

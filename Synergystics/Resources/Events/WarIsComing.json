@@ -1,0 +1,14 @@
+{
+  "EventID": 4,
+  "EventName": "WarIsComing",
+  "MapSource": "MONASTERY",
+  "IsValidStory": true,
+  "StoryDescriptor": "Multiple reports from the kingdom scouts have reported an unusual amount of military activity in a neighbouring kingdom. Numbers have shown as many as 5,000 young men have returned from other duties and missions by their King's command. More smoke than normal has been sighted in the area, scientists believed this to be linked to an increase in blacksmithing.",
+  "OutcomeDescriptor": "The reports are confirmed. The neighbouring kingdom is amassing troops and it appears a war is coming.",
+  "StoryTitle": "War is coming?",
+  "ShortOutcomeDescriptor": "The reports are confirmed. The neighbouring kingdom is amassing troops and it appears a war is coming.",
+  "PreSelectionPrefix": "PFP",
+  "SolutionOpinionPrefix": "POF",
+  "EventSolutionPrefix": "SOP",
+  "DataFolder": "WarIsComing_data"
+}

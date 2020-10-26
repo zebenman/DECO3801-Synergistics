@@ -16,6 +16,12 @@ public class AdvisorBioController : MonoBehaviour
 
     public ButtonScript ButtonScript;
 
+    public TextMeshProUGUI AdvisorName;
+    public TextMeshProUGUI AdvisorTypeText;
+    public TextMeshProUGUI AdvisorTrait;
+    public Image AdvisorImage;
+
+
     public void Start()
     {
         EventData active = GameController.Instance.GetFocusedEvents()[0];
@@ -26,13 +32,20 @@ public class AdvisorBioController : MonoBehaviour
             ActionDescriptorText[i].text = active.EventSolutions.Find(x => x.SolutionIndex == i).ActionDescription;
             ActionOpinionText[i].text = active.SolutionOpinions.Where(x => x.SolutionIndex == i).ToList().Find(x => x.AdvisorType == AdvisorType).Opinion;
         }
+
+        Advisor data = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == AdvisorType);
+        AdvisorName.text = data.GetAdvisorName();
+        AdvisorTypeText.text = data.GetAdvisorTypeFancy();
+        AdvisorTrait.text = data.GetTraitFancy();
+        AdvisorImage.sprite = data.AdvisorSprite;
     }
 
     public void ReturnToCouncil()
     {
+        string currentScene = SceneManager.GetActiveScene().name;
         SceneManager.LoadSceneAsync("CouncilRoom").completed += (a) =>
         {
-            GameController.Instance.OnSceneTransition("CouncilRoom");
+            GameController.Instance.OnSceneTransition("CouncilRoom", currentScene);
             FindObjectOfType<CouncilRoomController>().SwitchUIMode();
         };
     }

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public List<AdvisorPicture> AdvisorPictures;
+
     // Controller singleton instance
     public static GameController Instance { get; private set; }
     
@@ -21,8 +24,15 @@ public class GameController : MonoBehaviour
 
     public readonly DataLoader DataLoader = new DataLoader("Resources\\Events");
 
-    // Config file that reads/writes config information
-    public readonly GameConfig GameConfig = GameConfig.LoadFrom("Resources\\config.json", true);
+    // Advisor data generator
+    public AdvisorDataGenerator AdvisorGenerator { get; private set; }
+
+    // Story manager
+    public StoryManager StoryManager { get; private set; }
+
+    [HideInInspector]
+    [NonSerialized]
+    public StoryManager.StoryThread ActiveThread = null;
 
     // Flag describing if the user has selected a focus (hidden from Unity inspector)
     [HideInInspector]
@@ -51,9 +61,20 @@ public class GameController : MonoBehaviour
     // Internal list of focused events
     private List<EventData> FocusedEvents;
 
+    public EventData LastEvent { get; private set; } = null;
+    public int LastEventOutcome { get; private set; } = -1;
+
+    public void SetLastEventData(EventData last, int outcome)
+    {
+        LastEvent = last;
+        LastEventOutcome = outcome;
+    }
+
     private void SelectPossibleEvents()
     {
-        BufferedPossibleEvents = new List<EventData>(DataLoader.GetEvents());
+        ActiveThread = StoryManager.GetNextThread();
+        BufferedPossibleEvents = ActiveThread.GetAllEvents();
+        //BufferedPossibleEvents = new List<EventData>(DataLoader.GetEvents());
     }
 
     public List<EventData> GetPossibleEvents()
@@ -116,10 +137,36 @@ public class GameController : MonoBehaviour
 
         // Set singleton instance
         Instance = this;
+
+        StoryManager = new StoryManager("Resources\\StoryConfig.json");
+        AdvisorGenerator = new AdvisorDataGenerator("Resources\\MaleNames.txt", "Resources\\FemaleNames.txt", AdvisorPictures);
     }
 
-    public void OnSceneTransition(string scene)
+    public void OnSceneTransition(string to, string from)
     {
-        // TODO?
+        if(to.Equals(SceneInformation.MAIN_MENU))
+        {
+            Instance = null;
+            Destroy(gameObject);
+        }
+
+        if (from.Equals(SceneInformation.INTERMISSION_SCREEN))
+        {
+            HasSelectedFocus = false;
+            LastSelectedOption = -1;
+            LastSelectedEvent = null;
+            LastEvent = null;
+            LastEventOutcome = -1;
+            BufferedPossibleEvents = null;
+            FocusedEvents = null;
+
+            if (StoryManager.PeekNextThread() == null)
+            {
+                SceneManager.LoadSceneAsync(SceneInformation.MAIN_MENU).completed += (a) =>
+                {
+                    OnSceneTransition(SceneInformation.MAIN_MENU, to);
+                };
+            }
+        }
     }
 }

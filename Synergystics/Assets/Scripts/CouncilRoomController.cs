@@ -18,6 +18,8 @@ public class CouncilRoomController : MonoBehaviour
 
     public ButtonScript ButtonScript;
 
+    public Canvas Canvas;
+
     public void Start()
     {
         FocusSelection.SetActive(IsFocusSelectActive);
@@ -63,6 +65,63 @@ public class CouncilRoomController : MonoBehaviour
             case AdvisorType.AGRICULTURAL:
                 ButtonScript.Btn_change_scene(SceneInformation.AGRICULTURAL_BIO);
                 break;
+			case AdvisorType.ECONOMICS:
+                ButtonScript.Btn_change_scene(SceneInformation.ECONOMICS_BIO);
+                break;
+			case AdvisorType.INTELLIGENCE:
+                ButtonScript.Btn_change_scene(SceneInformation.INTEL_BIO);
+                break;
+			case AdvisorType.FOREIGN:
+                ButtonScript.Btn_change_scene(SceneInformation.FOREIGN_BIO);
+                break;
         }
+    }
+
+    [HideInInspector]
+    [NonSerialized]
+    private AreYouSureScript AreYouSure = null;
+
+    private int bufferedActionOutcome = -1;
+    private EventData bufferedEvent = null;
+
+    public void DetermineSummaryOutcome()
+    {        
+        if(bufferedEvent.IsValidStory)
+            ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_POSITIVE);
+        else
+            ButtonScript.Btn_change_scene(SceneInformation.SUMMARY_NEGATIVE);        
+    }
+
+    private void AreYouSureStepZero()
+    {
+        if (AreYouSure == null)
+        {
+            AreYouSure = Instantiate(PrefabManager.Instance.AreYouSurePrefab, Canvas.transform).GetComponent<AreYouSureScript>();
+            AreYouSure.Setup(new UnityEngine.Events.UnityAction(() => ConfirmFocusSuccess()), new UnityEngine.Events.UnityAction(() => ConfirmFocusDeny()));
+        }
+
+        AreYouSure.gameObject.SetActive(true);
+    }
+
+    public void ConfirmFocusDeny()
+    {
+        AreYouSure.gameObject.SetActive(false);
+    }
+
+    public void ConfirmFocusSuccess()
+    {
+        ConfirmFocusDeny();
+
+        // TODO -> Move to summary screen and stuff?
+        GameController.Instance.SetLastEventData(bufferedEvent, bufferedActionOutcome);
+        DetermineSummaryOutcome();
+    }
+
+    public void SelectAction(int action)
+    {
+        // Store the outcome we selected for later
+        bufferedActionOutcome = action;
+        bufferedEvent = GameController.Instance.GetFocusedEvents()[0];
+        AreYouSureStepZero();
     }
 }

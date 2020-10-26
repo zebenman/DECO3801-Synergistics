@@ -22,6 +22,7 @@ namespace EventBuilder
 
     public class StoryData
     {
+        public string StoryTitle;
         public string StoryDescriptor;
         public bool IsValidStory;
         public string FocusOutcome;
@@ -38,11 +39,13 @@ namespace EventBuilder
     public class TopLevelTemplate
     {
         public int EventID;
+        public string EventName;
         public string MapSource;
         public bool IsValidStory;
         public string StoryDescriptor;
         public string OutcomeDescriptor;
-        public string ShortOutcomeDescriptor = "Please insert this field";
+        public string StoryTitle;
+        public string ShortOutcomeDescriptor;
 
         public string PreSelectionPrefix;
         public string SolutionOpinionPrefix;
@@ -88,16 +91,21 @@ namespace EventBuilder
 
             StoryData data = GetStoryData(inputFileLocation);
 
+            int existingFiles = Directory.GetFiles($"{resourceFolderLocation}\\", "*.json").Length;
+            Console.WriteLine($"Found {existingFiles} files...");
+
             TopLevelTemplate topLevelTemplate = new TopLevelTemplate()
             {
                 DataFolder = $"{eventName}_data",
-                EventID = 0,
+                EventID = existingFiles,
+                EventName = eventName,
+                StoryTitle = data.StoryTitle,
                 EventSolutionPrefix = solutionPrefix,
                 IsValidStory = data.IsValidStory,
                 MapSource = data.MapSource,
                 OutcomeDescriptor = data.FocusOutcome,
                 PreSelectionPrefix = preFocusPrefix,
-                ShortOutcomeDescriptor = "Please insert this field",
+                ShortOutcomeDescriptor = data.FocusOutcome,
                 SolutionOpinionPrefix = postFocusPrefix,
                 StoryDescriptor = data.StoryDescriptor
             };
@@ -119,8 +127,8 @@ namespace EventBuilder
                     SolutionOpinions = new string[] { subset.Action1Opinion, subset.Action2Opinion, subset.Action3Opinion, subset.Action4Opinion }
                 };
 
-                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.PreSelectionPrefix}_{subset.AdvisorType[0]}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(preTemplate, Formatting.Indented));
-                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.SolutionOpinionPrefix}_{subset.AdvisorType[0]}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(afterTemplate, Formatting.Indented));
+                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.PreSelectionPrefix}_{subset.AdvisorType}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(preTemplate, Formatting.Indented));
+                File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.SolutionOpinionPrefix}_{subset.AdvisorType}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(afterTemplate, Formatting.Indented));
             }
 
             EventSolutionTemplate[] solutions = new EventSolutionTemplate[]
@@ -203,6 +211,7 @@ namespace EventBuilder
                     subset.Action4Opinion = storySheet.Cells[14, subset.SubtypeCol].Text;
                 }
 
+                data.StoryTitle = storySheet.Cells[3, 2].Text;
                 data.StoryDescriptor = storySheet.Cells[4, 2].Text;
                 data.FocusOutcome = storySheet.Cells[6, 2].Text;
                 data.IsValidStory = storySheet.Cells[4, 1].GetValue<bool>();

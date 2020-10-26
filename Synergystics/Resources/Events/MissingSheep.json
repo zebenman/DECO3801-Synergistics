@@ -1,12 +1,14 @@
 {
-    "EventID": 1,
-    "MapSource": "FARM",
-    "IsValidStory": false,
-    "StoryDescriptor": "Many sheep have gone missing over the last few days and some farmers suspect they've been stolen. Sheep are an important livestock and make up over 10% of the kingdoms food sources.",
-    "OutcomeDescriptor": "A scuffle has broken out into a small-scale war, farmers from across the kingdom have begun fighting each other because they believe the others have stolen their sheep. Many peasants are so worried they refuse to leave their homes.",
-    "ShortOutcomeDescriptor": "A scuffle has broken out into a small-scale war, farmers from across the kingdom have begun fighting each other",
-    "PreSelectionPrefix": "PSO",
-    "SolutionOpinionPrefix": "ASO",
-    "EventSolutionPrefix": "EVS",
-    "DataFolder": "MissingSheep_Data"
+  "EventID": 0,
+  "EventName": "MissingSheep",
+  "MapSource": "FARM",
+  "IsValidStory": false,
+  "StoryDescriptor": "In the kingdom over the past few weeks, over 2 sheep have been stolen according to one farmer. Sheep are an important livestock in the kingdom accounting for over 80% of the Kingdoms food source.",
+  "OutcomeDescriptor": "A war has started between the farmers on the East and West of the kingdom, with both sides accusing the other of stealing all of their sheep. Things are starting to get violent and the villagers are frightened to go outside.",
+  "StoryTitle": "Farmers are reporting their sheep stolen",
+  "ShortOutcomeDescriptor": "A war has started between the farmers on the East and West of the kingdom, with both sides accusing the other of stealing all of their sheep. Things are starting to get violent and the villagers are frightened to go outside.",
+  "PreSelectionPrefix": "PFP",
+  "SolutionOpinionPrefix": "POF",
+  "EventSolutionPrefix": "SOP",
+  "DataFolder": "MissingSheep_data"
 }

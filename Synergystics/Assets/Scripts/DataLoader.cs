@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 public class EventData
 {
     public int EventID;
+    public string EventName;
     public string MapSource;
-
+    public MapController.Locations MapLocation { get => Enum.TryParse(MapSource, out MapController.Locations loc) ? loc : MapController.Locations.INVALID_LOCATION; }
     public bool IsValidStory;
+
+    public string StoryTitle;
 
     public string StoryDescriptor;
     public string OutcomeDescriptor;
@@ -57,7 +60,9 @@ public class DataLoader
             JObject data = JObject.Parse(File.ReadAllText(path));
 
             int eventID = data.GetValue("EventID").ToObject<int>();
+            string eventName = data.GetValue("EventName").ToObject<string>();
             string source = data.GetValue("MapSource").ToObject<string>();
+            string storyTitle = data.GetValue("StoryTitle").ToObject<string>();
             string storyDescription = data.GetValue("StoryDescriptor").ToObject<string>();
             string outcomeDescription = data.GetValue("OutcomeDescriptor").ToObject<string>();
             string shortOutcomeDescription = data.GetValue("ShortOutcomeDescriptor").ToObject<string>();
@@ -73,7 +78,9 @@ public class DataLoader
             EventData eventData = new EventData()
             {
                 EventID = eventID,
+                EventName = eventName,
                 MapSource = source,
+                StoryTitle = storyTitle,
                 StoryDescriptor = storyDescription,
                 OutcomeDescriptor = outcomeDescription,
                 ShortOutcomeDescriptor = shortOutcomeDescription,
@@ -95,7 +102,12 @@ public class DataLoader
         {
             JObject data = JObject.Parse(File.ReadAllText(path));
 
-            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), data.GetValue("AdvisorType").ToObject<string>(), true);
+            string advisorTypeString = data.GetValue("AdvisorType").ToObject<string>();
+            if(advisorTypeString.Equals("AGRICULTURE", StringComparison.OrdinalIgnoreCase))
+            {
+                advisorTypeString = "AGRICULTURAL";
+            }
+            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), advisorTypeString, true);
             string opinion = data.GetValue("Opinion").ToObject<string>();
 
             AdvisorPreSelectionOpinion apso = new AdvisorPreSelectionOpinion()
@@ -118,7 +130,12 @@ public class DataLoader
         {
             JObject data = JObject.Parse(File.ReadAllText(path));
 
-            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), data.GetValue("AdvisorType").ToObject<string>(), true);
+            string advisorTypeString = data.GetValue("AdvisorType").ToObject<string>();
+            if (advisorTypeString.Equals("AGRICULTURE", StringComparison.OrdinalIgnoreCase))
+            {
+                advisorTypeString = "AGRICULTURAL";
+            }
+            AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), advisorTypeString, true);
             List<string> opinions = data.GetValue("SolutionOpinions").ToObject<List<string>>();
 
             foreach((int index, string opinion) in opinions.IndexedForeach())

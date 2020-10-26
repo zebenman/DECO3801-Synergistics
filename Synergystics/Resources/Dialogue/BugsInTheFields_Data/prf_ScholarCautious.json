@@ -1,9 +1,0 @@
-{
-    "AdvisorType": "SCHOLAR",
-    "Question": "What are your thoughts on the bugs found in our farmers fields?",
-    "Response": "It is troubling... I have heard reports from other nearby kingdoms that they've had massive crop failure after these pests showed up. Try talking to [AGRICULTURAL], I'm sure [AGRICULTURAL_GENDERED]'d have an idea.",
-    "TraitWeightings": {},
-    "RequiredFlags": [],
-    "BackgroundFlags": [],
-    "AdditionalData": {}
-}

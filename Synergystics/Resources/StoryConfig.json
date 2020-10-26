@@ -1,0 +1,29 @@
+{
+    "Chapters":
+    [
+        {
+            "ChapterID": 0,
+            "FillerEvents": 0,
+            "LocationRestrictions": [],
+            "StoryEvents": [],
+            "EventOverride": 
+            [
+                "MissingSheep",
+                "Plague"
+            ]
+        },
+        {
+            "ChapterID": 1,
+            "FillerEvents": 0,
+            "LocationRestrictions": [],
+            "StoryEvents": [],
+            "EventOverride":
+            [
+                "PopularityContest",
+                "TaxEvasion",
+                "WarIsComing",
+                "WMDs"
+            ]
+        }
+    ]
+}

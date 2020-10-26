@@ -6,10 +6,17 @@ using TMPro;
 
 public class MapController : MonoBehaviour
 {
+    public enum Locations
+    {
+        FARM, MONASTERY, MARKET, TAVERN, DUNGEON, BARRACKS, INVALID_LOCATION
+    }
+
     public Button FarmWidget;
-    public Button TownSquareWidget;
-    public Button TownHallWidget;
+    public Button TownMarketWidget;
+    public Button TavernWidget;
     public Button MonasteryWidget;
+    public Button DungeonWidget;
+    public Button BarracksWidget;
 
     public void Start()
     {
@@ -26,11 +33,17 @@ public class MapController : MonoBehaviour
                 case "MONASTERY":
                     rootObject = MonasteryWidget;
                     break;
-                case "TOWN_SQUARE":
-                    rootObject = TownSquareWidget;
+                case "TOWN_MARKET":
+                    rootObject = TownMarketWidget;
                     break;
-                case "TOWN_HALL":
-                    rootObject = TownHallWidget;
+                case "TAVERN":
+                    rootObject = TavernWidget;
+                    break;
+                case "DUNGEON":
+                    rootObject = DungeonWidget;
+                    break;
+                case "BARRACKS":
+                    rootObject = BarracksWidget;
                     break;
             }
             rootObject.enabled = false;

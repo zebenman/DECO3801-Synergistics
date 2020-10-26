@@ -16,6 +16,12 @@ public class AdvisorBioController : MonoBehaviour
 
     public ButtonScript ButtonScript;
 
+    public TextMeshProUGUI AdvisorName;
+    public TextMeshProUGUI AdvisorTypeText;
+    public TextMeshProUGUI AdvisorTrait;
+    public Image AdvisorImage;
+
+
     public void Start()
     {
         EventData active = GameController.Instance.GetFocusedEvents()[0];

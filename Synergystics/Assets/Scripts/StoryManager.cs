@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System.IO;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
+
 public class StoryManager
 {
     public class StoryThread
     {
         internal static List<EventData> ReadEvents = new List<EventData>();
+
+        public int ChapterID;
 
         public int RealStoryCount { get; private set; } = 0;
         public int FillerCount { get; private set; } = 0;
@@ -46,6 +49,13 @@ public class StoryManager
             AllEvents.AddRange(validEvents);
             ReadEvents.AddRange(AllEvents);
             IsInitialized = true;            
+        }
+
+        public StoryThread(List<EventData> allEvents)
+        {
+            AllEvents = allEvents;
+            ReadEvents.AddRange(AllEvents);
+            IsInitialized = true;
         }
 
         private void Initialize()
@@ -92,16 +102,39 @@ public class StoryManager
 
     private Queue<StoryThread> StoryThreads = new Queue<StoryThread>();
 
-    public StoryManager()
+    public StoryManager(string resourcePath)
     {
-        List<EventData> allEvents = GameController.Instance.DataLoader.GetEvents();
+        List<StoryThread> Chapters = new List<StoryThread>();
+        List<EventData> AllEvents = GameController.Instance.DataLoader.GetEvents();
 
-        StoryThread chapter0 = new StoryThread(allEvents.Where(x => !x.IsValidStory && x.EventName.Equals("MissingSheep")).ToList(), allEvents.Where(x => x.IsValidStory && x.EventName.Equals("Plague")).ToList());
-        allEvents = allEvents.Where(x => !StoryThread.ReadEvents.Contains(x)).ToList();
-        StoryThread chapter1 = new StoryThread(allEvents.Where(x => !x.IsValidStory).ToList(), allEvents.Where(x => x.IsValidStory).ToList());
+        JObject config = JObject.Parse(File.ReadAllText(resourcePath));
+        List<JObject> jChap = config["Chapters"].ToObject<List<JObject>>();
 
-        StoryThreads.Enqueue(chapter0);
-        StoryThreads.Enqueue(chapter1);
+        foreach(JObject c in jChap)
+        {
+            int id = c["ChapterID"].ToObject<int>();
+            if (c["EventOverride"] != null)
+            {
+                List<string> events = c["EventOverride"].ToObject<List<string>>();
+                StoryThread thread = new StoryThread(AllEvents.Where(x => events.Contains(x.EventName)).ToList());
+                thread.ChapterID = id;
+                Chapters.Add(thread);
+            } else
+            {
+                int filler = c["Filler"].ToObject<int>();
+                List<string> storyEvents = c["StoryEvents"].ToObject<List<string>>();
+                StoryThread thread = new StoryThread(filler, AllEvents.Where(x => storyEvents.Contains(x.EventName)).ToArray());
+                thread.ChapterID = id;
+                Chapters.Add(thread);
+            }           
+        }
+
+        while(Chapters.Count != 0)
+        {
+            StoryThread min = Chapters.Find(x => x.ChapterID == Chapters.Min(y => y.ChapterID));
+            StoryThreads.Enqueue(min);
+            Chapters.Remove(min);
+        }
     }
 
     public StoryThread GetNextThread()

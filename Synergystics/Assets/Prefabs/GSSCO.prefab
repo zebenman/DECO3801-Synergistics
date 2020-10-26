@@ -3368,7 +3368,7 @@ MonoBehaviour:
   m_fontSizeMin: 20
   m_fontSizeMax: 40
   m_fontStyle: 0
-  m_textAlignment: 264
+  m_textAlignment: 258
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0

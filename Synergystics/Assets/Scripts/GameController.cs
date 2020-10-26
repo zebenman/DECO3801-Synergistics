@@ -136,7 +136,7 @@ public class GameController : MonoBehaviour
         // Set singleton instance
         Instance = this;
 
-        StoryManager = new StoryManager();
+        StoryManager = new StoryManager("Resources\\StoryConfig.json");
     }
 
     public void OnSceneTransition(string to, string from)

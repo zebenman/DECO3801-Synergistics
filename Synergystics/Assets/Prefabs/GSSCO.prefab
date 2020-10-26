@@ -5274,10 +5274,10 @@ MonoBehaviour:
   BackButton: {fileID: 8211810234027002933}
   BackButtonText: {fileID: 8211810232829067380}
   ButtonScript: {fileID: 6086883531390771993}
-  advisors1_shown: 0
+  advisors1_shown: 1
   advisors2_shown: 0
-  AdvisorOpinions1: {fileID: 0}
-  AdvisorOpinions2: {fileID: 0}
+  AdvisorOpinions1: {fileID: 350156436988083057}
+  AdvisorOpinions2: {fileID: 3873372817673710329}
 --- !u!114 &6086883531390771993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5747,8 +5747,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: ConfirmFocusStepZero
+      - m_Target: {fileID: 8211810234556613806}
+        m_MethodName: SwitchUIMode
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

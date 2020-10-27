@@ -138,6 +138,8 @@ public class GameController : MonoBehaviour
         // Set singleton instance
         Instance = this;
 
+        AdvisorPictures = new List<AdvisorPicture>(Resources.LoadAll<AdvisorPicture>("Scriptables"));
+
         StoryManager = new StoryManager("Resources\\StoryConfig.json");
         AdvisorGenerator = new AdvisorDataGenerator("Resources\\MaleNames.txt", "Resources\\FemaleNames.txt", AdvisorPictures);
     }

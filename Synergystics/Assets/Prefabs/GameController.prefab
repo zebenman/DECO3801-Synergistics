@@ -46,6 +46,7 @@ MonoBehaviour:
   advisorType: 1
   advisorName: Archibald
   advisorGender: 0
+  advisorTrait: 0
 --- !u!1 &2011712504311593593
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +93,7 @@ MonoBehaviour:
   advisorType: 5
   advisorName: IADVISOR
   advisorGender: 2
+  advisorTrait: 0
 --- !u!1 &2011712504486877690
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,6 +140,7 @@ MonoBehaviour:
   advisorType: 2
   advisorName: Susan
   advisorGender: 1
+  advisorTrait: 0
 --- !u!1 &2011712504665073034
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,19 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 681c3caa9f4e30b49a815e6936ed9537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AdvisorPictures:
-  - {fileID: 11400000, guid: 37f1f5e298968c448967de4d1c904046, type: 2}
-  - {fileID: 11400000, guid: 915518aed7425f940bb81d92e6ce933b, type: 2}
-  - {fileID: 11400000, guid: 2cf1f4aced4737944be27e52bcc25ded, type: 2}
-  - {fileID: 11400000, guid: af2aa0eeca0b3524b8f0b23b46d0ee00, type: 2}
-  - {fileID: 11400000, guid: 5b5da1aaa1dd7794eb3f6502e4c61060, type: 2}
-  - {fileID: 11400000, guid: d208ea76a0e5c1849b4ea48d56ae3567, type: 2}
-  - {fileID: 11400000, guid: f06ac621ec061a0448beb8f55887e8c8, type: 2}
-  - {fileID: 11400000, guid: e5d7bf137a2802243baa5bf67083643c, type: 2}
-  - {fileID: 11400000, guid: 75ddfc2c9d0d4ec4a847757f05ffdc22, type: 2}
-  - {fileID: 11400000, guid: 25fb82c2887701d4f9c27f38e5f921f5, type: 2}
-  - {fileID: 11400000, guid: a6df241092175fe4baf8fb94c6fe2a97, type: 2}
-  - {fileID: 11400000, guid: 3aad046e8cb66274295b9f25ee1f9e3f, type: 2}
+  AdvisorPictures: []
   MaxFocusSelectionCount: 1
   Advisors:
   - {fileID: 2011712504080365262}
@@ -269,6 +260,7 @@ MonoBehaviour:
   advisorType: 3
   advisorName: Scholar Man
   advisorGender: 0
+  advisorTrait: 0
 --- !u!1 &2011712505093071839
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,6 +307,7 @@ MonoBehaviour:
   advisorType: 6
   advisorName: FADVISOR
   advisorGender: 2
+  advisorTrait: 0
 --- !u!1 &2011712505474029115
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,3 +354,4 @@ MonoBehaviour:
   advisorType: 4
   advisorName: EADVISOR
   advisorGender: 2
+  advisorTrait: 0

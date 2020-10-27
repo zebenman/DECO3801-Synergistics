@@ -27,11 +27,17 @@ namespace EventBuilder
         public bool IsValidStory;
         public string FocusOutcome;
         public string MapSource;
+        public string EventSummary;
 
         public string Action1;
         public string Action2;
         public string Action3;
         public string Action4;
+
+        public string ActionSummary1;
+        public string ActionSummary2;
+        public string ActionSummary3;
+        public string ActionSummary4;
 
         public List<StorySpreadsheetDataSubset> AdvisorData;
     }
@@ -46,6 +52,7 @@ namespace EventBuilder
         public string OutcomeDescriptor;
         public string StoryTitle;
         public string ShortOutcomeDescriptor;
+        public string EventSummary;
 
         public string PreSelectionPrefix;
         public string SolutionOpinionPrefix;
@@ -64,6 +71,7 @@ namespace EventBuilder
     {
         public int SolutionIndex;
         public string ActionDescription;
+        public string ActionSummary;
     }
 
     public class AfterSelectionTemplate
@@ -107,7 +115,8 @@ namespace EventBuilder
                 PreSelectionPrefix = preFocusPrefix,
                 ShortOutcomeDescriptor = data.FocusOutcome,
                 SolutionOpinionPrefix = postFocusPrefix,
-                StoryDescriptor = data.StoryDescriptor
+                StoryDescriptor = data.StoryDescriptor,
+                EventSummary = data.EventSummary
             };
 
             File.WriteAllText($"{resourceFolderLocation}\\{eventName}.json", JsonConvert.SerializeObject(topLevelTemplate, Formatting.Indented));
@@ -136,22 +145,26 @@ namespace EventBuilder
                 new EventSolutionTemplate()
                 {
                     SolutionIndex = 0,
-                    ActionDescription = data.Action1
+                    ActionDescription = data.Action1,
+                    ActionSummary = data.ActionSummary1
                 },
                 new EventSolutionTemplate()
                 {
                     SolutionIndex = 1,
-                    ActionDescription = data.Action2
+                    ActionDescription = data.Action2,
+                    ActionSummary = data.ActionSummary2
                 },
                 new EventSolutionTemplate()
                 {
                     SolutionIndex = 2,
-                    ActionDescription = data.Action3
+                    ActionDescription = data.Action3,
+                    ActionSummary = data.ActionSummary3
                 }, 
                 new EventSolutionTemplate()
                 {
                     SolutionIndex = 3,
-                    ActionDescription = data.Action4
+                    ActionDescription = data.Action4,
+                    ActionSummary = data.ActionSummary4
                 }
             };
 
@@ -216,10 +229,15 @@ namespace EventBuilder
                 data.FocusOutcome = storySheet.Cells[6, 2].Text;
                 data.IsValidStory = storySheet.Cells[4, 1].GetValue<bool>();
                 data.MapSource = storySheet.Cells[3, 1].Text;
+                data.EventSummary = storySheet.Cells[15, 2].Text;
                 data.Action1 = storySheet.Cells[7, 2].Text;
                 data.Action2 = storySheet.Cells[9, 2].Text;
                 data.Action3 = storySheet.Cells[11, 2].Text;
                 data.Action4 = storySheet.Cells[13, 2].Text;
+                data.ActionSummary1 = storySheet.Cells[16, 2].Text;
+                data.ActionSummary2 = storySheet.Cells[17, 2].Text;
+                data.ActionSummary3 = storySheet.Cells[18, 2].Text;
+                data.ActionSummary4 = storySheet.Cells[19, 2].Text;
 
                 data.AdvisorData = advisorData;
             }

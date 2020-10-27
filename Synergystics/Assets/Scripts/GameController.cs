@@ -62,9 +62,9 @@ public class GameController : MonoBehaviour
     private List<EventData> FocusedEvents;
 
     public EventData LastEvent { get; private set; } = null;
-    public int LastEventOutcome { get; private set; } = -1;
+    public EventSolution LastEventOutcome { get; private set; } = null;
 
-    public void SetLastEventData(EventData last, int outcome)
+    public void SetLastEventData(EventData last, EventSolution outcome)
     {
         LastEvent = last;
         LastEventOutcome = outcome;
@@ -156,7 +156,7 @@ public class GameController : MonoBehaviour
             LastSelectedOption = -1;
             LastSelectedEvent = null;
             LastEvent = null;
-            LastEventOutcome = -1;
+            LastEventOutcome = null;
             BufferedPossibleEvents = null;
             FocusedEvents = null;
 

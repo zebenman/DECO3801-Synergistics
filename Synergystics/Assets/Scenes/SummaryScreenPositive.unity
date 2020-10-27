@@ -492,7 +492,7 @@ MonoBehaviour:
   m_fontSizeMin: 25
   m_fontSizeMax: 45
   m_fontStyle: 1
-  m_textAlignment: 520
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   m_fontSizeMin: 25
   m_fontSizeMax: 45
   m_fontStyle: 1
-  m_textAlignment: 520
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -1631,6 +1631,8 @@ MonoBehaviour:
   EventSummary: {fileID: 1174438590}
   DecisionSummary: {fileID: 1033628315}
   IsEventSumActive: 1
+  HeaderText: {fileID: 581931396}
+  ActionText: {fileID: 1669463273}
 --- !u!4 &1930219558
 Transform:
   m_ObjectHideFlags: 0

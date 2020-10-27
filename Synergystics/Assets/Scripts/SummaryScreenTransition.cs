@@ -12,6 +12,9 @@ public class SummaryScreenTransition : MonoBehaviour
     public GameObject DecisionSummary;
     public bool IsEventSumActive = true;
 
+    public TextMeshProUGUI HeaderText;
+    public TextMeshProUGUI ActionText;
+
 
     // Start is called before the first frame update
     public void Start()
@@ -19,7 +22,11 @@ public class SummaryScreenTransition : MonoBehaviour
         EventSummary.SetActive(IsEventSumActive);
         DecisionSummary.SetActive(!IsEventSumActive);
 
-        EventData active = GameController.Instance.GetFocusedEvents()[0];
+        EventData lastEvent = GameController.Instance.LastEvent;
+        EventSolution lastSolution = GameController.Instance.LastEventOutcome;
+
+        HeaderText.text = lastEvent.EventSummary;
+        ActionText.text = lastSolution.ActionSummary;
     }
 
     public void TransitionUI()

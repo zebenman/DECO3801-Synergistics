@@ -19,6 +19,7 @@ public class EventData
     public string StoryDescriptor;
     public string OutcomeDescriptor;
     public string ShortOutcomeDescriptor;
+    public string EventSummary;
 
     public List<AdvisorPreSelectionOpinion> PreSelectionOpinions;
     public List<AdvisorSolutionOpinion> SolutionOpinions;
@@ -42,6 +43,7 @@ public class EventSolution
 {
     public int SolutionIndex;
     public string ActionDescription;
+    public string ActionSummary;
 }
 
 public class DataLoader
@@ -67,6 +69,7 @@ public class DataLoader
             string outcomeDescription = data.GetValue("OutcomeDescriptor").ToObject<string>();
             string shortOutcomeDescription = data.GetValue("ShortOutcomeDescriptor").ToObject<string>();
             bool isValidStory = data.GetValue("IsValidStory").ToObject<bool>();
+            string eventSummary = data.GetValue("EventSummary").ToObject<string>();
 
             string preSelectionFilePrefix = data.GetValue("PreSelectionPrefix").ToObject<string>();
             string solutionSelectionFilePrefix = data.GetValue("SolutionOpinionPrefix").ToObject<string>();
@@ -85,6 +88,7 @@ public class DataLoader
                 OutcomeDescriptor = outcomeDescription,
                 ShortOutcomeDescriptor = shortOutcomeDescription,
                 IsValidStory = isValidStory,
+                EventSummary = eventSummary,
                 PreSelectionOpinions = LoadPreSelection(rPath, preSelectionFilePrefix),
                 SolutionOpinions = LoadSolutionOpinions(rPath, solutionSelectionFilePrefix),
                 EventSolutions = LoadSolutions(rPath, eventSolutionSelectionFilePrefix)
@@ -164,11 +168,13 @@ public class DataLoader
 
             int solutionIndex = data.GetValue("SolutionIndex").ToObject<int>();
             string actionDescription = data.GetValue("ActionDescription").ToObject<string>();
+            string actionSummary = data.GetValue("ActionSummary").ToObject<string>();
 
             EventSolution es = new EventSolution()
             {
                 SolutionIndex = solutionIndex,
-                ActionDescription = actionDescription
+                ActionDescription = actionDescription,
+                ActionSummary = actionSummary
             };
 
             rList.Add(es);

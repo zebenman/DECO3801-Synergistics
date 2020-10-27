@@ -7,6 +7,7 @@
   "OutcomeDescriptor": "The reports are confirmed. The neighbouring kingdom is amassing troops and it appears a war is coming.",
   "StoryTitle": "War is coming?",
   "ShortOutcomeDescriptor": "The reports are confirmed. The neighbouring kingdom is amassing troops and it appears a war is coming.",
+  "EventSummary": "Despite your best efforts to send some of your men over to negotiate with the neighbouring kingdom, they refused to listen and is fully intent on taking over your kingdom.",
   "PreSelectionPrefix": "PFP",
   "SolutionOpinionPrefix": "POF",
   "EventSolutionPrefix": "SOP",

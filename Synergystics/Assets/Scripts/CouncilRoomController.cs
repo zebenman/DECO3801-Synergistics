@@ -113,7 +113,7 @@ public class CouncilRoomController : MonoBehaviour
         ConfirmFocusDeny();
 
         // TODO -> Move to summary screen and stuff?
-        GameController.Instance.SetLastEventData(bufferedEvent, bufferedActionOutcome);
+        GameController.Instance.SetLastEventData(bufferedEvent, bufferedEvent.EventSolutions[bufferedActionOutcome]);
         DetermineSummaryOutcome();
     }
 

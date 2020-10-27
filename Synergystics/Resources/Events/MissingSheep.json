@@ -7,6 +7,7 @@
   "OutcomeDescriptor": "A war has started between the farmers on the East and West of the kingdom, with both sides accusing the other of stealing all of their sheep. Things are starting to get violent and the villagers are frightened to go outside.",
   "StoryTitle": "Farmers are reporting their sheep stolen",
   "ShortOutcomeDescriptor": "A war has started between the farmers on the East and West of the kingdom, with both sides accusing the other of stealing all of their sheep. Things are starting to get violent and the villagers are frightened to go outside.",
+  "EventSummary": "While you were focused on handling these minor affairs in your Kingdom, the disease that is currently affecting the neighbouring Kingdoms have started to take effect within your own Kingdom.",
   "PreSelectionPrefix": "PFP",
   "SolutionOpinionPrefix": "POF",
   "EventSolutionPrefix": "SOP",

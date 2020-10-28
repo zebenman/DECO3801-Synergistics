@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
+// Deprecated, keeping for posterities sake
+// Meant to work with DialogueLoader, one loads event data, the other loads advisor dialogue
+[Obsolete]
 public class EventLoader
 {
     public class EventVariants

@@ -2,10 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
+// All data for events
 public class EventData
 {
     public int EventID;
@@ -26,12 +24,14 @@ public class EventData
     public List<EventSolution> EventSolutions;
 }
 
+// Advisor opinion before focus selection
 public class AdvisorPreSelectionOpinion
 {
     public AdvisorType AdvisorType;
     public string Opinion;
 }
 
+// Advisor opinion for a solution
 public class AdvisorSolutionOpinion
 {
     public AdvisorType AdvisorType;
@@ -39,6 +39,7 @@ public class AdvisorSolutionOpinion
     public int SolutionIndex;
 }
 
+// Event solution data
 public class EventSolution
 {
     public int SolutionIndex;
@@ -46,21 +47,26 @@ public class EventSolution
     public string ActionSummary;
 }
 
+// Loads event data
 public class DataLoader
 {
+    // List of all events
     private readonly List<EventData> EventDataList = new List<EventData>();
 
+    // Get a list of all events
     public List<EventData> GetEvents()
     {
         return EventDataList;
     }
 
+    // Load events at a specific path
     public DataLoader(string resourcePath)
     {
         foreach (string path in Directory.GetFiles(resourcePath, "*.json"))
         {
             JObject data = JObject.Parse(File.ReadAllText(path));
 
+            // Grab everything from the top level file
             int eventID = data.GetValue("EventID").ToObject<int>();
             string eventName = data.GetValue("EventName").ToObject<string>();
             string source = data.GetValue("MapSource").ToObject<string>();
@@ -98,6 +104,7 @@ public class DataLoader
         }
     }
 
+    // Load pre focus selection opinions
     private List<AdvisorPreSelectionOpinion> LoadPreSelection(string dataFolder, string preSelectionPrefix)
     {
         List<AdvisorPreSelectionOpinion> rList = new List<AdvisorPreSelectionOpinion>();
@@ -106,9 +113,11 @@ public class DataLoader
         {
             JObject data = JObject.Parse(File.ReadAllText(path));
 
+            // Special case for agricultural advisor (didnt name her correctly in template docs)
             string advisorTypeString = data.GetValue("AdvisorType").ToObject<string>();
             if(advisorTypeString.Equals("AGRICULTURE", StringComparison.OrdinalIgnoreCase))
             {
+                // Just change the string so we can parse it
                 advisorTypeString = "AGRICULTURAL";
             }
             AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), advisorTypeString, true);
@@ -126,6 +135,7 @@ public class DataLoader
         return rList;
     }
 
+    // Load advisor solution opinions
     private List<AdvisorSolutionOpinion> LoadSolutionOpinions(string dataFolder, string opinionSelectionPrefix)
     {
         List<AdvisorSolutionOpinion> rList = new List<AdvisorSolutionOpinion>();
@@ -134,6 +144,7 @@ public class DataLoader
         {
             JObject data = JObject.Parse(File.ReadAllText(path));
 
+            // Another agri advisor fix
             string advisorTypeString = data.GetValue("AdvisorType").ToObject<string>();
             if (advisorTypeString.Equals("AGRICULTURE", StringComparison.OrdinalIgnoreCase))
             {
@@ -142,6 +153,7 @@ public class DataLoader
             AdvisorType aType = (AdvisorType)Enum.Parse(typeof(AdvisorType), advisorTypeString, true);
             List<string> opinions = data.GetValue("SolutionOpinions").ToObject<List<string>>();
 
+            // Create objects for each solution
             foreach((int index, string opinion) in opinions.IndexedForeach())
             {
                 AdvisorSolutionOpinion aso = new AdvisorSolutionOpinion()
@@ -158,6 +170,7 @@ public class DataLoader
         return rList;
     }
 
+    // Load solutions
     private List<EventSolution> LoadSolutions(string dataFolder, string solutionSelectionPrefix)
     {
         List<EventSolution> rList = new List<EventSolution>();

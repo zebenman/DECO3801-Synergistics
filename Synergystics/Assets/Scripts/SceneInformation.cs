@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿
+// Scene names for use in code
 public static class SceneInformation
 {
     public const string WELCOME_SCREEN = "WelcomeScreen";

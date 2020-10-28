@@ -4,8 +4,10 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
+// Controller for map location scenes
 public class GenericSelectionSceneController : MonoBehaviour
 {
+    // Mapping class to help organize advisor UI information
     [Serializable]
     public class AdvisorTextMapper
     {
@@ -15,6 +17,7 @@ public class GenericSelectionSceneController : MonoBehaviour
         public Image AdvisorImage;
     }
 
+    // Other required stuff
     public string MapSource;
     public Canvas Canvas;
     public TextMeshProUGUI StoryText;
@@ -26,11 +29,13 @@ public class GenericSelectionSceneController : MonoBehaviour
     public TextMeshProUGUI BackButtonText;
     public ButtonScript ButtonScript;
 
+    // Advisor page information
     public bool advisors1_shown;
     public bool advisors2_shown;
     public GameObject AdvisorOpinions1;
     public GameObject AdvisorOpinions2;
 
+    // Find the active event
     private EventData GetActiveEvent()
     {
         List<EventData> eventSelectionList = GameController.Instance.HasSelectedFocus ? GameController.Instance.GetFocusedEvents() : GameController.Instance.GetPossibleEvents();
@@ -39,19 +44,24 @@ public class GenericSelectionSceneController : MonoBehaviour
 
     public void Start()
     {
+        // Start on page 1
         advisors1_shown = true;
         advisors2_shown = false;
 
+        // Grab the canvas if we don't have one
         if (Canvas == null)
             Canvas = transform.parent.GetComponent<Canvas>();
 
+        // Skip if we have no active event
         EventData activeEvent = GetActiveEvent();
         if (activeEvent == null) return;
 
+        // Get story title & text
         StoryText.text = GameController.Instance.HasSelectedFocus ? activeEvent.OutcomeDescriptor : activeEvent.StoryDescriptor;
         StoryTitle.text = activeEvent.StoryTitle;
         foreach (AdvisorTextMapper mapper in AdvisorText)
         {
+            // Grab text for advisor opinions
             string textValue = null;
             if(GameController.Instance.HasSelectedFocus)
             {
@@ -60,11 +70,13 @@ public class GenericSelectionSceneController : MonoBehaviour
             {
                 textValue = activeEvent.PreSelectionOpinions.Find(x => x.AdvisorType == mapper.AdvisorType).Opinion;
             }
+            // Set opinion text, advisor name, and advisor image
             mapper.OpinionText.text = textValue;
             mapper.NameText.text = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == mapper.AdvisorType).GetAdvisorName();
             mapper.AdvisorImage.sprite = GameController.Instance.GetAdvisors().Find(x => x.GetAdvisorType() == mapper.AdvisorType).AdvisorSprite;
         }
 
+        // If the event is the confirmed focus, disable the focus selection button
         if (GameController.Instance.GetFocusedEvents().Contains(GetActiveEvent()))
         {
             ConfirmEventButton.enabled = false;
@@ -76,6 +88,7 @@ public class GenericSelectionSceneController : MonoBehaviour
     [NonSerialized]
     private AreYouSureScript AreYouSure = null;
 
+    // Start confirmation
     public void ConfirmFocusStepZero()
     {
         if(AreYouSure == null)
@@ -87,11 +100,13 @@ public class GenericSelectionSceneController : MonoBehaviour
         AreYouSure.gameObject.SetActive(true);
     }
 
+    // Disable confirm overlay
     public void ConfirmFocusDeny()
     {
         AreYouSure.gameObject.SetActive(false);
     }
 
+    // Apply confirmation changes
     public void ConfirmFocusSuccess()
     {
         ConfirmFocusDeny();
@@ -107,6 +122,7 @@ public class GenericSelectionSceneController : MonoBehaviour
         }
     }
 
+    // Switch Advisor pages
     public void SwitchUIMode()
     {
         advisors1_shown = !advisors1_shown;

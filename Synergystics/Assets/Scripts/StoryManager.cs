@@ -7,16 +7,25 @@ public class StoryManager
 {
     public class StoryThread
     {
+        // A list of all used events (so we don't use duplicates)
         internal static List<EventData> ReadEvents = new List<EventData>();
 
+        // ID used for ordering
         public int ChapterID;
 
+        // Number of real stories in this chapter
         public int RealStoryCount { get; private set; } = 0;
+
+        // Number of filler stories in this chapter
         public int FillerCount { get; private set; } = 0;
 
+        // Locations these stories are restricted to
         public MapController.Locations[] RestrictedLocations { get; private set; } = null;
 
+        // List of events in this chapter
         private List<EventData> AllEvents = null;
+
+        // Is this chapter initialized?
         private bool IsInitialized = false;
 
         public StoryThread(int realCount, int fillerCount)
@@ -58,6 +67,7 @@ public class StoryManager
             IsInitialized = true;
         }
 
+        // Initialize this chapter
         private void Initialize()
         {
             if (IsInitialized)
@@ -66,7 +76,8 @@ public class StoryManager
             if (AllEvents == null)
                 AllEvents = new List<EventData>();
 
-            List<EventData> possibleEvents = GameController.Instance.DataLoader.GetEvents().Where(x => !ReadEvents.Contains(x)).ToList();
+            // Get a list of possible events, ensuring that they haven't been used already, and they conform to the restricted locations
+            List<EventData> possibleEvents = GameController.Instance.DataLoader.GetEvents().Where(x => !ReadEvents.Contains(x) && (RestrictedLocations == null || RestrictedLocations.Length == 0 || RestrictedLocations.Contains(x.MapLocation))).ToList();
 
             List<EventData> validEvents = possibleEvents.Where(x => x.IsValidStory).ToList();
             List<EventData> invalidEvents = possibleEvents.Where(x => !x.IsValidStory).ToList();
@@ -100,8 +111,10 @@ public class StoryManager
         }
     }
 
+    // Queue of story threads
     private Queue<StoryThread> StoryThreads = new Queue<StoryThread>();
 
+    // Create a manger and load a story config from the resource path
     public StoryManager(string resourcePath)
     {
         List<StoryThread> Chapters = new List<StoryThread>();
@@ -110,17 +123,20 @@ public class StoryManager
         JObject config = JObject.Parse(File.ReadAllText(resourcePath));
         List<JObject> jChap = config["Chapters"].ToObject<List<JObject>>();
 
+        // Create chapters
         foreach(JObject c in jChap)
         {
             int id = c["ChapterID"].ToObject<int>();
             if (c["EventOverride"] != null)
             {
+                // If we have an override field then use it to populate the chapter
                 List<string> events = c["EventOverride"].ToObject<List<string>>();
                 StoryThread thread = new StoryThread(AllEvents.Where(x => events.Contains(x.EventName)).ToList());
                 thread.ChapterID = id;
                 Chapters.Add(thread);
             } else
             {
+                // Create a new chapter based on filler info
                 int filler = c["Filler"].ToObject<int>();
                 List<string> storyEvents = c["StoryEvents"].ToObject<List<string>>();
                 StoryThread thread = new StoryThread(filler, AllEvents.Where(x => storyEvents.Contains(x.EventName)).ToArray());
@@ -129,6 +145,7 @@ public class StoryManager
             }           
         }
 
+        // Add the chapter with the smallest id to the queue until we have no more chapters
         while(Chapters.Count != 0)
         {
             StoryThread min = Chapters.Find(x => x.ChapterID == Chapters.Min(y => y.ChapterID));

@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ThroneRoomController : MonoBehaviour
 {
+    // All the different widgets in the throne room
     public GameObject MapWidget;
     public GameObject CouncilRoomWidget;
     public GameObject LocationWidget;
@@ -14,6 +13,7 @@ public class ThroneRoomController : MonoBehaviour
 
     public void Start()
     {
+        // Disable council room without a focus selected, Disable map room when a focus is selected
         CouncilRoomWidget.GetComponent<Button>().enabled = GameController.Instance.HasSelectedFocus;
         MapWidget.GetComponent<Button>().enabled = !GameController.Instance.HasSelectedFocus;
 

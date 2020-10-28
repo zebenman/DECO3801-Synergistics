@@ -19,9 +19,10 @@ public class GameController : MonoBehaviour
     // Dialogue loader that reads dialogue information from file
     //public readonly DialogueLoader DialogugeLoader = new DialogueLoader("Resources\\Dialogue");
 
-    // Event loader that reads event data from file
+    // Event loader that reads event data from file (deprecated)
     //public readonly EventLoader EventLoader = new EventLoader("Resources\\Events");
 
+    // Loads most game related data (events mostly)
     public readonly DataLoader DataLoader = new DataLoader("Resources\\Events");
 
     // Advisor data generator
@@ -61,22 +62,27 @@ public class GameController : MonoBehaviour
     // Internal list of focused events
     private List<EventData> FocusedEvents;
 
+    // Last event we focused on
     public EventData LastEvent { get; private set; } = null;
+    
+    // Last solution we picked
     public EventSolution LastEventOutcome { get; private set; } = null;
 
+    // Set last event & solution
     public void SetLastEventData(EventData last, EventSolution outcome)
     {
         LastEvent = last;
         LastEventOutcome = outcome;
     }
 
+    // Find possible events
     private void SelectPossibleEvents()
     {
         ActiveThread = StoryManager.GetNextThread();
         BufferedPossibleEvents = ActiveThread.GetAllEvents();
-        //BufferedPossibleEvents = new List<EventData>(DataLoader.GetEvents());
     }
 
+    // Get a list of possible events, will select new ones if there are none
     public List<EventData> GetPossibleEvents()
     {
         if(BufferedPossibleEvents == null || BufferedPossibleEvents.Count == 0)
@@ -88,6 +94,7 @@ public class GameController : MonoBehaviour
         return BufferedPossibleEvents;
     }
 
+    // Add an event to the focussed list
     public void AddFocusedEvent(EventData gameEvent)
     {
         if (HasSelectedFocus) return;
@@ -99,6 +106,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    // Get a list of focussed events
     public List<EventData> GetFocusedEvents()
     {
         if(FocusedEvents == null && HasSelectedFocus)
@@ -131,6 +139,7 @@ public class GameController : MonoBehaviour
         return Advisors;
     }
 
+    // Run startup code
     private void Awake()
     {
         DontDestroyOnLoad(this);
@@ -138,12 +147,15 @@ public class GameController : MonoBehaviour
         // Set singleton instance
         Instance = this;
 
+        // Load advisor pictures
         AdvisorPictures = new List<AdvisorPicture>(Resources.LoadAll<AdvisorPicture>("Scriptables"));
 
+        // Load story config, and advisor generator
         StoryManager = new StoryManager("Resources\\StoryConfig.json");
         AdvisorGenerator = new AdvisorDataGenerator("Resources\\MaleNames.txt", "Resources\\FemaleNames.txt", AdvisorPictures);
     }
 
+    // Transition scenes, and stuff that can go with it
     public void OnSceneTransition(string to, string from)
     {
         if(to.Equals(SceneInformation.MAIN_MENU))

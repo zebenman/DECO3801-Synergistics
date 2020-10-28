@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using TMPro;
 using System;
-using UnityEngine.SceneManagement;
 
+// Controller for council room
 public class CouncilRoomController : MonoBehaviour
 {
     public GameObject FocusSelection;
@@ -112,7 +109,6 @@ public class CouncilRoomController : MonoBehaviour
     {
         ConfirmFocusDeny();
 
-        // TODO -> Move to summary screen and stuff?
         GameController.Instance.SetLastEventData(bufferedEvent, bufferedEvent.EventSolutions[bufferedActionOutcome]);
         DetermineSummaryOutcome();
     }

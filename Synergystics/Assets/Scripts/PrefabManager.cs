@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// A class to hold prefabs to be used
 public sealed class PrefabManager : MonoBehaviour
 {
     public GameObject AreYouSurePrefab;

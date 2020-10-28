@@ -7,8 +7,13 @@ using UnityEngine.UI;
 
 public static class Utilities
 {
+    // A nice dark grey colour
     public static readonly Color DarkGrey = new Color(66f / 255f, 66f / 255f, 66f / 255f);
+
+    // Some map sources
     public static readonly string[] MapSources = { "FARM", "TOWN_MARKET", "MONASTERY", "TAVERN", "BARRACKS", "DUNGEON" };
+
+    // Recursively set UI widget colours, ignoring certain objects
     public static void SetWidgetColorRecursive(GameObject root, Color color, params GameObject[] ignore)
     {
         if (ignore.Contains(root))
@@ -18,16 +23,20 @@ public static class Utilities
 
         SetWidgetColor(root, color);
 
+        // Set all child widget colours
         for (int i = 0; i < root.transform.childCount; i++)
         {
             SetWidgetColorRecursive(root.transform.GetChild(i).gameObject, color, ignore);
         }
     }
 
+    // Set a widgets colour
     public static void SetWidgetColor(GameObject root, Color color)
     {
+        // Check images and text
         Image rootImage = root.GetComponent<Image>();
         TextMeshProUGUI rootText = root.GetComponent<TextMeshProUGUI>();
+
         if (rootImage != null)
         {
             rootImage.color = color;
@@ -39,6 +48,7 @@ public static class Utilities
         }
     }
 
+    // An indexed for-each enumerator
     public static IEnumerable<(int index, T value)> IndexedForeach<T>(this IEnumerable<T> self)
     {
         for(int i = 0; i < self.Count(); i++)
@@ -47,6 +57,7 @@ public static class Utilities
         }
     }
 
+    // I actually have no idea what this does anymore
     public static IEnumerable<T> SelectRandom<T>(this IEnumerable<T> self, int count)
     {
         if (count <= 0)
@@ -65,6 +76,7 @@ public static class Utilities
         return indices.Select(x => self.ElementAt(x));
     }
 
+    // Get the traits for each advisor type
     public static (AdvisorTrait a, AdvisorTrait b) GetTraitByType(this AdvisorType type)
     {
         switch(type)

@@ -1,10 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using TMPro;
-using System;
-using UnityEngine.SceneManagement;
 
 public class SummaryScreenTransition : MonoBehaviour
 {
@@ -12,6 +7,7 @@ public class SummaryScreenTransition : MonoBehaviour
     public GameObject DecisionSummary;
     public bool IsEventSumActive = true;
 
+    // Summary header and action text
     public TextMeshProUGUI HeaderText;
     public TextMeshProUGUI ActionText;
 
@@ -22,6 +18,7 @@ public class SummaryScreenTransition : MonoBehaviour
         EventSummary.SetActive(IsEventSumActive);
         DecisionSummary.SetActive(!IsEventSumActive);
 
+        // Load summary text from events
         EventData lastEvent = GameController.Instance.LastEvent;
         EventSolution lastSolution = GameController.Instance.LastEventOutcome;
 

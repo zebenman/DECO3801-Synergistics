@@ -176,9 +176,9 @@ public class GameController : MonoBehaviour
 
             if (StoryManager.PeekNextThread() == null)
             {
-                SceneManager.LoadSceneAsync(SceneInformation.MAIN_MENU).completed += (a) =>
+                SceneManager.LoadSceneAsync(SceneInformation.FINAL_SUMMARY).completed += (a) =>
                 {
-                    OnSceneTransition(SceneInformation.MAIN_MENU, to);
+                    OnSceneTransition(SceneInformation.FINAL_SUMMARY, to);
                 };
             }
         }

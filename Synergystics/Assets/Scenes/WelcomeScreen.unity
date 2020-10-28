@@ -1349,5 +1349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 2011712504665073035, guid: d95d7f0f01ae6094b9ccbd5d7ad70e4a,
+        type: 3}
+      propertyPath: AdvisorPictures.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d95d7f0f01ae6094b9ccbd5d7ad70e4a, type: 3}

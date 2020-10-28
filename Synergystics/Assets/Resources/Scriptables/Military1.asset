@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 6514e853a43baa444959dfa4cf29c608, type: 3}
   m_Name: Military1
   m_EditorClassIdentifier: Assembly-CSharp::AdvisorPicture
   AdvisorImage: {fileID: 21300000, guid: 33ca3f0965d6c52448139f151a649d70, type: 3}

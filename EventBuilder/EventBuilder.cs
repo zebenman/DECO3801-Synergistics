@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 
 namespace EventBuilder
 { 
+    // Spreadsheet data for actions
     public class StorySpreadsheetDataSubset
     {
         public string AdvisorType;
@@ -20,6 +21,7 @@ namespace EventBuilder
         public string Action4Opinion;
     }
 
+    // Story data from spreadsheet
     public class StoryData
     {
         public string StoryTitle;
@@ -42,6 +44,7 @@ namespace EventBuilder
         public List<StorySpreadsheetDataSubset> AdvisorData;
     }
 
+    // Template data for top-level json
     public class TopLevelTemplate
     {
         public int EventID;
@@ -61,12 +64,14 @@ namespace EventBuilder
         public string DataFolder;
     }
 
+    // Pre-focus advisor opinion
     public class PreSelectionTemplate
     {
         public string AdvisorType;
         public string Opinion;
     }
 
+    // Event solution data
     public class EventSolutionTemplate
     {
         public int SolutionIndex;
@@ -74,22 +79,26 @@ namespace EventBuilder
         public string ActionSummary;
     }
 
+    // Post-focus advisor opinion & opinions for each solution
     public class AfterSelectionTemplate
     {
         public string AdvisorType;
         public string[] SolutionOpinions;
     }
 
+    // Actual builder class
     public class EventBuilder
     {
         public static void Main(string[] args)
         {
+            // Usage
             if(args.Length != 6)
             {
                 Console.WriteLine("usage: resource_location event_name solution_prefix prefocus_prefix postfocus_prefix input_file");
                 return;
             }
 
+            // Get data from args
             string resourceFolderLocation = args[0];
             string eventName = args[1];
             string solutionPrefix = args[2];
@@ -97,11 +106,14 @@ namespace EventBuilder
             string postFocusPrefix = args[4];
             string inputFileLocation = args[5];
 
+            // Read story data
             StoryData data = GetStoryData(inputFileLocation);
 
+            // Check how many existing files there are to use as our eventID
             int existingFiles = Directory.GetFiles($"{resourceFolderLocation}\\", "*.json").Length;
             Console.WriteLine($"Found {existingFiles} files...");
 
+            // Create top level template
             TopLevelTemplate topLevelTemplate = new TopLevelTemplate()
             {
                 DataFolder = $"{eventName}_data",
@@ -119,9 +131,11 @@ namespace EventBuilder
                 EventSummary = data.EventSummary
             };
 
+            // Write out top level data and create data folder
             File.WriteAllText($"{resourceFolderLocation}\\{eventName}.json", JsonConvert.SerializeObject(topLevelTemplate, Formatting.Indented));
             Directory.CreateDirectory($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}");
 
+            // Write out opinion subset data
             foreach(StorySpreadsheetDataSubset subset in data.AdvisorData)
             {
                 PreSelectionTemplate preTemplate = new PreSelectionTemplate()
@@ -140,6 +154,7 @@ namespace EventBuilder
                 File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.SolutionOpinionPrefix}_{subset.AdvisorType}{subset.AdvisorSubtype}.json", JsonConvert.SerializeObject(afterTemplate, Formatting.Indented));
             }
 
+            // Create 'solutions'
             EventSolutionTemplate[] solutions = new EventSolutionTemplate[]
             {
                 new EventSolutionTemplate()
@@ -168,21 +183,24 @@ namespace EventBuilder
                 }
             };
 
+            // Write all solution data
             foreach(EventSolutionTemplate template in solutions)
             {
                 File.WriteAllText($"{resourceFolderLocation}\\{topLevelTemplate.DataFolder}\\{topLevelTemplate.EventSolutionPrefix}_Solution{template.SolutionIndex}.json", JsonConvert.SerializeObject(template, Formatting.Indented));
             }            
         }
 
+        // Function to read story data
         private static StoryData GetStoryData(string inputFileLocation)
         {
             StoryData data = new StoryData();
-
+            
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             using (var package = new ExcelPackage(new FileInfo(inputFileLocation)))
             {
                 var storySheet = package.Workbook.Worksheets[0];
 
+                // Get base cells
                 var baseSubtypeCell = storySheet.Cells["A2"];
                 var baseMasterCell = storySheet.Cells["A1"];
 
@@ -193,18 +211,22 @@ namespace EventBuilder
 
                 do
                 {
+                    // Read next value in cell (1 col down)
                     baseSubtypeCell = storySheet.Cells[baseSubtypeCell.Start.Row, baseSubtypeCell.Start.Column + 1];
                     baseMasterCell = storySheet.Cells[baseMasterCell.Start.Row, baseMasterCell.Start.Column + 1];
 
+                    // Get text
                     subtypeCellValue = baseSubtypeCell.Text;
                     string newMasterValue = baseMasterCell.Text;
                     if (newMasterValue != null && !newMasterValue.Equals(string.Empty))
                     {
+                        // If the mastervalue is valid, use it
                         masterTypeCellValue = newMasterValue;
                     }
 
                     if (!subtypeCellValue.Equals(string.Empty) && !masterTypeCellValue.Equals(string.Empty))
                     {
+                        // Create a new subset class, use the master type as the advisor type, also use the subtype cell for traits
                         advisorData.Add(new StorySpreadsheetDataSubset()
                         {
                             AdvisorType = masterTypeCellValue,
@@ -214,6 +236,7 @@ namespace EventBuilder
                     }
                 } while (subtypeCellValue != string.Empty);
 
+                // Find action opinions for each advisor
                 foreach(StorySpreadsheetDataSubset subset in advisorData)
                 {
                     subset.PrefocusAdvisorOpinion = storySheet.Cells[5, subset.SubtypeCol].Text;
@@ -224,6 +247,7 @@ namespace EventBuilder
                     subset.Action4Opinion = storySheet.Cells[14, subset.SubtypeCol].Text;
                 }
 
+                // Some hardcoded template stuff that is always in the same location
                 data.StoryTitle = storySheet.Cells[3, 2].Text;
                 data.StoryDescriptor = storySheet.Cells[4, 2].Text;
                 data.FocusOutcome = storySheet.Cells[6, 2].Text;
@@ -242,7 +266,7 @@ namespace EventBuilder
                 data.AdvisorData = advisorData;
             }
 
-
+            // Return completed story data
             return data;
         }
     }

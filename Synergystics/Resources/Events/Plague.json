@@ -7,7 +7,7 @@
   "OutcomeDescriptor": "You investigate further and the reports from neighbouring kingdoms are true. The disease spreads rapidly, with a low infection to fatality rate and those most at risk are the elderly.",
   "StoryTitle": "Neighbouring kingdoms have reported a new disease that is making its townsfolk sick.",
   "ShortOutcomeDescriptor": "You investigate further and the reports from neighbouring kingdoms are true. The disease spreads rapidly, with a low infection to fatality rate and those most at risk are the elderly.",
-  "EventSummary": "You have received additional news that the disease has swept through all neighbouring kingdoms and the situation has gotten severe.",
+  "EventSummary": "You have received additional news that the disease has swept through all neighbouring kingdoms and that the situation has become very severe.",
   "PreSelectionPrefix": "PFP",
   "SolutionOpinionPrefix": "POF",
   "EventSolutionPrefix": "SOP",

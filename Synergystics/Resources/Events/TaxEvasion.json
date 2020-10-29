@@ -3,7 +3,7 @@
   "EventName": "TaxEvasion",
   "MapSource": "BARRACKS",
   "IsValidStory": true,
-  "StoryDescriptor": "Military Commander, George the Great, has reportedly not paid any taxes since his entry into the military. While many may know him for his win in the Battle of Greenfield, his 15 years of tax fraud has been notorious to the tax office. Reports from the office say he owes enough to feed at least half of the Kingdom for a year.",
+  "StoryDescriptor": "Military Commander, George the Great, has reportedly not paid any taxes since his entry into the military. While many may know him for his win in the Battle of Greenfield, his 15 years of tax fraud has made him notorious to the tax office. Reports from the office say he owes enough to feed at least half the Kingdom for a year.",
   "OutcomeDescriptor": "This is proven to be true. And there is unrest between the military and the townsfolk.",
   "StoryTitle": "One of the top military commanders has been accused of not paying taxes.",
   "ShortOutcomeDescriptor": "This is proven to be true. And there is unrest between the military and the townsfolk.",

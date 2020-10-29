@@ -174,13 +174,13 @@ public class GameController : MonoBehaviour
             BufferedPossibleEvents = null;
             FocusedEvents = null;
 
-            if (StoryManager.PeekNextThread() == null)
+            /*if (StoryManager.PeekNextThread() == null)
             {
                 SceneManager.LoadSceneAsync(SceneInformation.FINAL_SUMMARY).completed += (a) =>
                 {
                     OnSceneTransition(SceneInformation.FINAL_SUMMARY, to);
                 };
-            }
+            }*/
         }
     }
 }

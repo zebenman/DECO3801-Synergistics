@@ -10,22 +10,26 @@ public class CouncilRoomController : MonoBehaviour
     public TextMeshProUGUI ModeChangeText;
     public bool IsFocusSelectActive = true;
 
+    // Action and story text components
     public TextMeshProUGUI[] ActionTexts;
     public TextMeshProUGUI StoryText;
 
     public ButtonScript ButtonScript;
 
+    // Canvas
     public Canvas Canvas;
 
     public void Start()
     {
+        // Enable actions, disable advisor opinions
         FocusSelection.SetActive(IsFocusSelectActive);
         AdvisorOpinions.SetActive(!IsFocusSelectActive);
 
+        // Get active event, and set story text
         EventData active = GameController.Instance.GetFocusedEvents()[0];
-
         StoryText.text = active.OutcomeDescriptor;
         
+        // Insert solution data
         for (int i = 0; i < ActionTexts.Length; i ++)
         {
             EventSolution solution = active.EventSolutions.Find(x => x.SolutionIndex == i);
@@ -34,6 +38,7 @@ public class CouncilRoomController : MonoBehaviour
         }
     }
 
+    // Switch between possible actions and advisor opinions
     public void SwitchUIMode()
     {
         IsFocusSelectActive = !IsFocusSelectActive;
@@ -43,6 +48,7 @@ public class CouncilRoomController : MonoBehaviour
         ModeChangeText.text = IsFocusSelectActive ? "View Advisor Opinions" : "View Possible Actions";
     }
 
+    // Change to the appropriate advisor bio
     public void ViewAdvisorOpinion(string advisorType)
     {
         if(!Enum.TryParse(advisorType, out AdvisorType aType))
@@ -81,6 +87,7 @@ public class CouncilRoomController : MonoBehaviour
     private int bufferedActionOutcome = -1;
     private EventData bufferedEvent = null;
 
+    // Go to summary screen
     public void DetermineSummaryOutcome()
     {        
         if(bufferedEvent.IsValidStory)

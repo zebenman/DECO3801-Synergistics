@@ -5,16 +5,19 @@ using System.Reflection;
 using System.Text;
 using UnityEngine;
 
+// Advisor types
 public enum AdvisorType
 {
     DEFAULT, MILITARY, AGRICULTURAL, SCHOLAR, ECONOMICS, INTELLIGENCE, FOREIGN
 }
 
+// Advisor Genders
 public enum AdvisorGender
 {
     MALE, FEMALE, OTHER
 }
 
+// Advisor Traits
 public enum AdvisorTrait
 {
     DEFAULT, DIPLOMATIC, WAR_MONGERING, PRESTIGIOUS, CONNIVING, GREEDY, DOWN_TO_EARTH, PERCEPTIVE, SENSIBLE, CONSCIENTIOUS, GULLIBLE, SUBTLE, UPFRONT
@@ -36,6 +39,7 @@ public class Advisor : MonoBehaviour
 
     public Sprite AdvisorSprite { get; protected set; } = null;
 
+    // Could be useful, was useful at one point, isn't useful right now
     public void ProgressTurn()
     {
         
@@ -46,6 +50,7 @@ public class Advisor : MonoBehaviour
         return advisorType;
     }
 
+    // Convert Advisor Type into a fancy string, i.e. MILITARY -> "Military Advisor"
     public string GetAdvisorTypeFancy()
     {
         string t = advisorType.ToString().ToLower();
@@ -67,6 +72,7 @@ public class Advisor : MonoBehaviour
         return advisorTrait;
     }
 
+    // Convert Advisor Trait into a fancy string, i.e. DOWN_TO_EARTH -> "Down To Earth"
     public string GetTraitFancy()
     {
         StringBuilder builder = new StringBuilder();
@@ -80,6 +86,7 @@ public class Advisor : MonoBehaviour
         return builder.ToString();
     }
 
+    // Get pronouns for gender
     public string GetAdvisorGenderedReferal()
     {
         switch(GetAdvisorGender())
@@ -97,6 +104,7 @@ public class Advisor : MonoBehaviour
 
     private void Awake()
     {
+        // Generate data
         (advisorName, advisorTrait, advisorGender, AdvisorSprite) = GameController.Instance.AdvisorGenerator.GetRandomAdvisorData(advisorType);
 
         // Register advisor name & type with replacement map

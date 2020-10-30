@@ -53,7 +53,7 @@ This is the build folder used by unity to build and run the game.
 #### **Images**
 All of the background images are stored here.
 
-![Main-Backgrounds](Team-Portfolio/Main/Main-Backgrounds.PNG)
+![Main-Backgrounds](Team-Portfolio/Main/Main-Backgrounds.png)
 
 #### **Prefabs**
 - Advisor Bio SSOC: For advisor bio pages in council room.

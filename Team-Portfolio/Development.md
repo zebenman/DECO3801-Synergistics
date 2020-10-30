@@ -9,13 +9,17 @@ Find below a brief outline of the proposal Synergistics will work on, as well as
 [**READ MORE**](https://zebenman.github.io/DECO3801-Synergistics/Team-Portfolio/Development/Statement-of-Work)
 
 # DESIGN DOCUMENTATION
-- Link to view the report.
+- Report can be found in `Team-Portfolio/Development/Design-Documentation.pdf`
+
 
 # USER TESTING
 
-- Link to view the report
-- [Google Form](https://forms.gle/9JHe7Gtn9e9Fef477)
+- [Round 1 form](https://forms.gle/9JHe7Gtn9e9Fef477)
+- [Round 2 form](https://forms.gle/CfKV1dzkikxzLNQD7)
+- Report can be found in `Team-Portfolio/Development/User-Testing-Report.pdf`
 
+# GAME FLOW
+![Game flow](Development/Gameflow.jpg)
 
 # INITIAL WIREFRAMES
 ![screen 1](Development/Wireframes/1.png)
@@ -28,3 +32,6 @@ Find below a brief outline of the proposal Synergistics will work on, as well as
 
 # PAPER PROTOTYPE
 ![Paper Prototype](Development/PaperPrototype.jpg)
+
+# PROPOSAL NOTES
+- Report can be found in `Team-Portfolio/Development/Proposal-Notes.pdf`
